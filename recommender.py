@@ -20,9 +20,9 @@ class top_pop_rec():
         train_grouped.rename(columns = {'playlist': 'score'}, inplace=True)
 
         #sort the tracks based on the computed score
-        train_sort = train_grouped.sort_values(['score', self.track], ascending = [0,1])
+        train_sort = train_grouped.sort_values(['count', self.track], ascending = [0,1])
 
-        train_sort['Rank'] = train_sort['score'].rank(ascending=0, method='first')
+        train_sort['Rank'] = train_sort['count'].rank(ascending=0, method='first')
 
         #get top 10
         self.pop_recommendations = train_sort.head(10)
