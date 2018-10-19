@@ -39,3 +39,67 @@ class top_pop_rec():
         playlist_recommendations = playlist_recommendations[cols]
 
         return playlist_recommendations
+
+class content_based_rec():
+    def __init__(self):
+        self.train_data = None
+        self.playlist_id = None
+        self.track_id = None
+        self.cooccurence_matrix = None
+        self.item_similarity_recommendations = None
+
+    # Get unique tracks corresponding to a given playlist
+    def get_playlist_songs(self, playlist):
+        playlist_data = self.train_data[self.train_data[self.playlist_id] == playlist]
+        playlist_tracks = list(playlist_data[self.track_id].unique())
+
+        return playlist_tracks
+
+    # Get unique playlists for a given track
+    def get_song_playlists(self, track):
+        track_data = self.train_data[self.train_data[self.track_id] == track]
+        track_playlists = set(track_data[self.playlist_id].unique())
+
+        return track_playlists
+
+    # Get unique items (songs) in the training data
+    def get_all_tracks(self):
+        all_tracks = list(self.train_data[self.track_id].unique())
+
+        return all_tracks
+
+    # Define cooccurence matrix
+    def construct_cooccurence_martix(self, playlist_tracks, all_tracks):
+
+        # Get playlists for all tracks in playlist_tracks
+        playlist_tracks_playlists = []
+        for i in range(0, len(playlist_tracks)):
+            playlist_tracks_playlists.append(self.get_song_playlists(playlist_tracks[i]))
+
+        #initialize the item cooccurence matrix of size len(playlist_tracks) x len(tracks)
+        cooccurence_matrix = np.matrix(np.zeros(shape=(len(playlist_tracks), len(all_tracks))), float)
+
+        #calculate similarity between playlist tracks and all unique tracks
+        for i in range(0, len(all_tracks)):
+            #calculate unique listeners (playlists) of track i
+            track_i_data = self.train_data[self.train_data[self.track_id] == all_tracks[i]]
+            playlists_i = set(track_i_data[self.playlist_id].unique())
+
+            for j in range(0, len(all_tracks)):
+                #get unique listeners (playlists) of song j
+                playlists_j = playlist_tracks_playlists[j]
+
+                #compute intersection of listeners of song i and j
+                playlists_intersection = playlists_i.intersection(playlists_j)
+
+                #compute cooccurence matrix[i,j] as Jaccard index
+                if len(playlists_intersection) != 0:
+                    #compute union of listeners of songs i and j
+                    playlist_union = playlists_i.union(playlists_j)
+                    cooccurence_matrix[j,i] = float(len(playlists_intersection))/float(len(playlist_union))
+                else:
+                    cooccurence_matrix[j,i] = 0
+
+        return cooccurence_matrix
+
+    #use cooccurence matrix to make top recommendations
