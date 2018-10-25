@@ -1,0 +1,17 @@
+
+npython:S117"TRename this parameter "URM_test" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜‹İ¦øÿÿÿÿ
+tpython:S117"_Rename this local variable "cumulative_MAP" to match the regular expression ^[_a-z][a-z0-9_]*$.(…š½Ï
+jpython:S117"URename this parameter "URM_train" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿ­ƒÌ
+ypython:S117"_Rename this local variable "itemPopularity" to match the regular expression ^[_a-z][a-z0-9_]*$.(áæ“£ıÿÿÿÿ
+ipython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(¦²õ˜ıÿÿÿÿ
+gpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷ñİĞÿÿÿÿÿ
+gpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëüúÃüÿÿÿÿ
+gpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ìáµºùÿÿÿÿ
+gpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ìáµºùÿÿÿÿ
+npython:S117"TRename this local variable "Xsq" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘çÛÈüÿÿÿÿ
+bpython:S117"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(ø¾§‰
+kpython:S117"VRename this local variable "X_ind" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ç€„Ó
+fpython:S116"QRename this field "URM_train" to match the regular expression ^[_a-z][_a-z0-9]*$.(Òåàƒ
+hpython:S116"TRename this field "popularItems" to match the regular expression ^[_a-z][_a-z0-9]*$.(¯ÂÌn
+epython:S116"PRename this field "W_sparse" to match the regular expression ^[_a-z][_a-z0-9]*$.(‰Õşå
+gpython:S1542"LRename function "MAP" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(È ñúÿÿÿÿ
