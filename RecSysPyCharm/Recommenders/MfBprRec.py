@@ -2,6 +2,7 @@ import numpy as np
 import time
 import sys
 import os
+import subprocess
 
 # MF BPR RECOMMENDER IMPLEMENTATION
 
@@ -23,9 +24,10 @@ class MF_BPR_Cython(object):
             self.runCompilationScript()
             print("Compilation Complete")
 
-    def fit(self, epochs=30, logFile=None, URM_test=None, filterTopPop = False, filterCustomItems = np.array([], dtype=np.int), minRatingsPerUser=1,
-            batch_size = 1000, validate_every_N_epochs = 1, start_validation_after_N_epochs = 0,
-            learning_rate = 0.05, sgd_mode='sgd', user_reg = 0.0, positive_reg = 0.0, negative_reg = 0.0):
+    def fit(self, epochs=30, logFile=None, URM_test=None, filterTopPop = False,
+            filterCustomItems = np.array([], dtype=np.int), minRatingsPerUser=1,
+            batch_size=1000, validate_every_N_epochs=1, start_validation_after_N_epochs=0,
+            learning_rate=0.05, sgd_mode='sgd', user_reg=0.0, positive_reg=0.0, negative_reg=0.0):
 
         self.eligibleUsers = []
 
@@ -116,7 +118,7 @@ class MF_BPR_Cython(object):
         fileToCompile_list = ['MF_BPR_Cython_Epoch.pyx']
 
         command = ['python',
-                   '../setup.py',
+                   'setup.py',
                    'build_ext',
                    '--inplace'
                    ]
@@ -179,8 +181,8 @@ class MF_BPR_Cython(object):
             scores_array = self._filterCustomItems_on_scores(scores_array)
 
         # rank items and mirror column to obtain a ranking in descending score
-        #ranking = scores.argsort()
-        #ranking = np.flip(ranking, axis=0)
+        # ranking = scores.argsort()
+        # ranking = np.flip(ranking, axis=0)
 
         # Sorting is done in three steps. Faster then plain np.argsort for higher number of items
         # - Partition the data to extract the set of relevant items
