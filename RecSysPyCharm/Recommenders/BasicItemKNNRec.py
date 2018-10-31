@@ -1,6 +1,7 @@
 import numpy as np
 import scipy
 import scipy.sparse as sps
+from CythonModules.KnnRecCython import KnnRecCython
 
 
 # BASIC ITEM KNN RECOMMENDER IMPLEMENTATION
@@ -9,7 +10,7 @@ import scipy.sparse as sps
 class BasicItemKNNRecommender(object):
     """ ItemKNN recommender with cosine similarity and no shrinkage"""
 
-    def __init__(self, URM, k=50, shrinkage=100.0, similarity='cosine'):
+    def __init__(self, URM, k=100, shrinkage=10.0, similarity='cosine'):
         self.dataset = URM
         self.k = k
         self.shrinkage = shrinkage
@@ -27,11 +28,18 @@ class BasicItemKNNRecommender(object):
         return "ItemKNN(similarity={},k={},shrinkage={})".format(
             self.similarity_name, self.k, self.shrinkage)
 
-    def fit(self, X):
+    def fit(self, X, Y=None):
         item_weights = self.distance.compute(X)
 
         item_weights = check_matrix(item_weights, 'csr')  # nearly 10 times faster
         print("Converted to csr")
+
+        # TODO make a second item_weights matrix with another attribute and obtain (weighted?) average rating with the former
+        if Y is not None:
+            item_weights2 = self.distance.compute(Y)
+            item_weights2 = check_matrix(item_weights2, 'csr')
+            print("Converted to csr")
+            item_weights = item_weights + item_weights2
 
         # for each column, keep only the top-k scored items
         # THIS IS THE SLOW PART, FIND A BETTER SOLUTION
@@ -48,6 +56,7 @@ class BasicItemKNNRecommender(object):
             rows.extend(np.arange(nitems)[top_k_idx])
             cols.extend(np.ones(self.k) * i)
         self.W_sparse = sps.csc_matrix((values, (rows, cols)), shape=(nitems, nitems), dtype=np.float32)
+
 
     def recommend(self, playlist_id, at=None, exclude_seen=True):
         # compute the scores using the dot product

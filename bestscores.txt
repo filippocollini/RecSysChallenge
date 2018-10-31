@@ -1,0 +1,18 @@
+MAP     Technique
+
+0.0503  content based filtering,
+        similarity computed on albums, 
+        100 nearest neighbours,
+        10 shrinkage
+0.0327  content based filtering,
+        similarity computed on artists, 
+        100 nearest neighbours,
+        10 shrinkage
+0.0523  content based filtering,
+        similarity computed on artists(40%) and albums(60%), 
+        100 nearest neighbours,
+        10 shrinkage
+0.0536  content based filtering,
+        similarity computed on artists and albums (summed 100% both), 
+        100 nearest neighbours,
+        10 shrinkage

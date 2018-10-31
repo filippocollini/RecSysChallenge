@@ -1,0 +1,30 @@
+
+tpython:S117"XRename this parameter "filterTopPop" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÂæÀüûÿÿÿÿ
+python:S117#"cRename this local variable "URM_train_positive" to match the regular expression ^[_a-z][a-z0-9_]*$.(½óøõÿÿÿÿÿ
+‡python:S117"kRename this parameter "start_validation_after_N_epochs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÚÄşÿÿÿÿ
+upython:S117›"]Rename this parameter "filterCustomItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(«ôëü
+hpython:S116"QRename this field "URM_train" to match the regular expression ^[_a-z][_a-z0-9]*$.(Òåàƒ
+python:S117u"hRename this local variable "compiledModuleSubfolder" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÎÚü£
+hpython:S101	"RRename class "MF_BPR_Cython" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(ıãï
+qpython:S117"URename this parameter "URM_train" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÙˆÁ›şÿÿÿÿ
+tpython:S117"]Rename this parameter "filterCustomItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(—íúÜ
+ppython:S117›"XRename this parameter "filterTopPop" to match the regular expression ^[_a-z][a-z0-9_]*$.(«ôëü
+cpython:S107"GMethod "fit" has 15 parameters, which is greater than the 7 authorized.(ÂæÀüûÿÿÿÿ
+qpython:S100Œ"YRename method "writeCurrentConfig" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(™“éÁ
+python:S117"cRename this parameter "validate_every_N_epochs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÚÄşÿÿÿÿ
+python:S117v"cRename this local variable "fileToCompile_list" to match the regular expression ^[_a-z][a-z0-9_]*$.(àÚÜôüÿÿÿÿ
+wpython:S100p"[Rename method "runCompilationScript" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ïÌİ³ÿÿÿÿÿ
+mpython:S100ˆ"URename method "epochIteration" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¿Ì¦
+lpython:S116 "URename this field "eligibleUsers" to match the regular expression ^[_a-z][_a-z0-9]*$.(ßôç«
+ppython:S117"TRename this parameter "URM_test" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÂæÀüûÿÿÿÿ
+€python:S117-"dRename this local variable "numUserInteractions" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëòã­üÿÿÿÿ
+6python:S125%"Remove this commented out code.(õÒĞ
+6python:S125["Remove this commented out code.(”²á
+kpython:S117Œ"SRename this parameter "logFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(™“éÁ
+Bpython:S1481~"*Remove the unused local variable "output".(©¡ıŒ
+opython:S116:"SRename this field "cythonEpoch" to match the regular expression ^[_a-z][_a-z0-9]*$.(É¤ó¶ùÿÿÿÿ
+tpython:S117I"]Rename this local variable "currentEpoch" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ã¿Ü­
+tpython:S117"]Rename this parameter "minRatingsPerUser" to match the regular expression ^[_a-z][a-z0-9_]*$.(—íúÜ
+ppython:S117Œ"XRename this parameter "currentEpoch" to match the regular expression ^[_a-z][a-z0-9_]*$.(™“éÁ
+opython:S117"SRename this parameter "logFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÂæÀüûÿÿÿÿ
+Spython:S1481v"6Remove the unused local variable "fileToCompile_list".(àÚÜôüÿÿÿÿ

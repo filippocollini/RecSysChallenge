@@ -130,27 +130,33 @@ def use_top_pop(generate_sub=False):
         evaluate_algorithm(URM_test, top_pop_recommender, at=10)
 
 
-def use_knn(generate_sub=False, icm="album"):
+def use_knn(generate_sub=False, icm="album", k=50):
 
-    if icm != "artist" and icm != "album" and icm != "duration":
+    if icm != "artist" and icm != "album" and icm != "duration" and icm != "art&alb":
         return
 
-    rec_s = BasicItemKNNRecommender(URM=URM_train, shrinkage=10.0, k=50)
+    rec_s = BasicItemKNNRecommender(URM=URM_train, shrinkage=10.0, k=k)
 
     ones = np.ones(num_tracks, dtype=int)
 
     if icm == "artist":
         ICM_all_artist = sps.coo_matrix((ones, (all_tracks, artist_array)))
         ICM_all_artist = ICM_all_artist.tocsr()
-        rec_s.fit(ICM_all_artist)
+        rec_s.fit(X=ICM_all_artist)
     elif icm == "album":
         ICM_all_album = sps.coo_matrix((ones, (all_tracks, album_array)))
         ICM_all_album = ICM_all_album.tocsr()
-        rec_s.fit(ICM_all_album)
+        rec_s.fit(X=ICM_all_album)
     elif icm == "duration":
         ICM_all_duration = sps.coo_matrix((ones, (all_tracks, duration_array)))
         ICM_all_duration = ICM_all_duration.tocsr()
-        rec_s.fit(ICM_all_duration)
+        rec_s.fit(X=ICM_all_duration)
+    elif icm == "art&alb":
+        ICM_all_artist = sps.coo_matrix((ones, (all_tracks, artist_array)))
+        ICM_all_artist = ICM_all_artist.tocsr()
+        ICM_all_album = sps.coo_matrix((ones, (all_tracks, album_array)))
+        ICM_all_album = ICM_all_album.tocsr()
+        rec_s.fit(X=ICM_all_artist, Y=ICM_all_album)
 
     if generate_sub:
         generate_submission(rec_s)
@@ -180,4 +186,4 @@ def use_mf_bpr(gen_sub=False):
         evaluate_algorithm(URM_test, recommender, at=10)
 
 
-use_mf_bpr(gen_sub=True)
+use_knn(k=100, icm="art&alb")

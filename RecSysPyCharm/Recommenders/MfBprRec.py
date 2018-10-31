@@ -10,8 +10,6 @@ class MF_BPR_Cython(object):
 
     def __init__(self, URM_train, positive_threshold=4, recompile_cython=False, num_factors=10):
 
-        # super(MF_BPR_Cython, self).__init__()
-
         self.URM_train = URM_train
         self.n_users = URM_train.shape[0]
         self.n_items = URM_train.shape[1]
@@ -193,3 +191,10 @@ class MF_BPR_Cython(object):
         ranking = relevant_items_partition[relevant_items_partition_sorting]
 
         return ranking
+
+    # TODO da sistemare
+    def _filter_seen_on_scores(self, user_id, ranking):
+        user_profile = self.URM_train[user_id]
+        seen = user_profile.indices
+        unseen_mask = np.in1d(ranking, seen, assume_unique=True, invert=True)
+        return ranking[unseen_mask]
