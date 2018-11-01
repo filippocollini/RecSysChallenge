@@ -56,7 +56,6 @@ URM_all = URM_all.tocsr()
 URM_train = sps.coo_matrix((data[train_mask], (playlist_array[train_mask], track_array[train_mask])))
 URM_train = URM_train.tocsr()
 print(URM_train.shape)
-print(URM_train.getnnz())
 
 URM_test = sps.coo_matrix((data[test_mask], (playlist_array[test_mask], track_array[test_mask])))
 URM_test = URM_test.tocsr()

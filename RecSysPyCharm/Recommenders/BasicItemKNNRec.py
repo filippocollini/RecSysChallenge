@@ -29,12 +29,13 @@ class BasicItemKNNRecommender(object):
             self.similarity_name, self.k, self.shrinkage)
 
     def fit(self, X, Y=None):
+
         item_weights = self.distance.compute(X)
 
         item_weights = check_matrix(item_weights, 'csr')  # nearly 10 times faster
         print("Converted to csr")
 
-        # TODO make a second item_weights matrix with another attribute and obtain (weighted?) average rating with the former
+        # make a second item_weights matrix with another attribute and obtain (weighted?) average rating with the former
         if Y is not None:
             item_weights2 = self.distance.compute(Y)
             item_weights2 = check_matrix(item_weights2, 'csr')
@@ -56,7 +57,7 @@ class BasicItemKNNRecommender(object):
             rows.extend(np.arange(nitems)[top_k_idx])
             cols.extend(np.ones(self.k) * i)
         self.W_sparse = sps.csc_matrix((values, (rows, cols)), shape=(nitems, nitems), dtype=np.float32)
-
+        self.rec = KnnRecCython(self.W_sparse.toarray())
 
     def recommend(self, playlist_id, at=None, exclude_seen=True):
         # compute the scores using the dot product

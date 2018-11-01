@@ -12,33 +12,33 @@
 cimport numpy as np
 import numpy as np
 
+# VERY VERY SLOW AND USES A LOT OF RAM :(
+
 cdef class KnnRecCython:
 
-    cdef long[:,:] user_profile
+    cdef long[:] user_profile
+    cdef float[:,:] W_sparse
     cdef double[:] scores
+    cdef long[:] ranking
     cdef int[:] seen
     cdef int[:] unseen_mask
-    cdef int[:,:] dataset
-    cdef float[:,:] W_sparse
 
     def __init__(self, W_sparse):
-        self.W_sparse = W_sparse.todense()
+        self.W_sparse = W_sparse
 
     def recommend(self, user_profile, at=None, exclude_seen=True):
         # compute the scores using the dot product
-        self.user_profile = user_profile
+        self.user_profile = user_profile.ravel()
         self.scores = np.dot(self.user_profile, self.W_sparse).ravel()
 
-        # rank items
-        ranking = np.argsort(self.scores)[::-1]
         if exclude_seen:
-            ranking = self._filter_seen(ranking, user_profile)
+            self.scores = self._filter_seen()
 
-        return ranking[:at]
+        # rank items
+        self.ranking = np.argsort(self.scores)[::-1]
 
-    cdef long[:] _filter_seen(self, ranking, user_profile):
+        return self.ranking[:at]
 
-        self.seen = np.array(user_profile[0]).indices
-        self.unseen_mask = np.in1d(ranking, self.seen, assume_unique=True, invert=True)
+    cdef double[:] _filter_seen(self):
 
-        return ranking[self.unseen_mask]
+        return np.delete(self.scores, np.nonzero(self.user_profile))
