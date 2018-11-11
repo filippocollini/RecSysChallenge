@@ -9,7 +9,7 @@ from Recommenders.MfBprRec import MF_BPR_Cython
 
 # LOAD DATA FROM FILE TO DATATFRAMES
 
-project_dir = "/home/alle/GitHub/RecSysChallenge/"
+project_dir = "/Users/filippocollini/RecSysChallenge/"
 
 train = pd.read_csv(project_dir+"all/train.csv")
 train.head()
@@ -120,7 +120,7 @@ def generate_submission(recommender):
 
 def use_top_pop(generate_sub=False):
 
-    top_pop_recommender = TopPopRecommender()
+    top_pop_recommender = TopTopPopRecommender()
     top_pop_recommender.fit(URM_train)
 
     if generate_sub:
@@ -185,4 +185,4 @@ def use_mf_bpr(gen_sub=False):
         evaluate_algorithm(URM_test, recommender, at=10)
 
 
-use_knn(k=100, icm="art&alb")
+use_mf_bpr()
