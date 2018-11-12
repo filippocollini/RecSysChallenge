@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c9c07d6-2e6d-4840-9d2f-de6e48d52161" name="Default Changelist" comment="Test">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CythonModules/KnnRecCython.c" beforeDir="false" afterPath="$PROJECT_DIR$/CythonModules/KnnRecCython.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CythonModules/KnnRecCython.cpython-36m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/CythonModules/KnnRecCython.cpython-36m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CythonModules/KnnRecCython.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CythonModules/KnnRecCython.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/CythonModules/KnnRecCython.o" beforeDir="false" afterPath="$PROJECT_DIR$/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/CythonModules/KnnRecCython.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysChallenge_AimiCollini.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysChallenge_AimiCollini.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recommenders/BasicItemKNNRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recommenders/BasicItemKNNRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recommenders/MfBprRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recommenders/MfBprRec.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,39 +14,40 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/RecSysPyCharm$Main.coverage" NAME="Main Coverage Results" MODIFIED="1541089159355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RecSysPyCharm$Main.coverage" NAME="Main Coverage Results" MODIFIED="1541780999701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RecSysPyCharm$RecSysChallenge_AimiCollini.coverage" NAME="Main Coverage Results" MODIFIED="1540830013323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1873836616">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="c" value="1" />
+          <entry key="c" value="2" />
           <entry key="h" value="1" />
-          <entry key="py" value="13" />
-          <entry key="pyx" value="10" />
+          <entry key="py" value="16" />
+          <entry key="pyx" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C++" value="2" />
-          <entry key="Cython" value="10" />
-          <entry key="Python" value="13" />
+          <entry key="C++" value="3" />
+          <entry key="Cython" value="12" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="py" value="1405" />
+          <entry key="py" value="1537" />
           <entry key="pyx" value="1364" />
           <entry key="txt" value="4" />
         </counts>
@@ -58,7 +56,7 @@
         <counts>
           <entry key="Cython" value="1364" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="1405" />
+          <entry key="Python" value="1537" />
         </counts>
       </usages-collector>
     </session>
@@ -68,11 +66,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="734">
-              <caret line="187" column="27" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
+            <state relative-caret-position="2012">
+              <caret line="180" column="83" selection-start-line="180" selection-start-column="83" selection-end-line="180" selection-end-column="83" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Recommenders/MfBprRec.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1236">
+              <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -81,15 +91,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Recommenders/BasicItemKNNRec.py">
+        <entry file="file://$PROJECT_DIR$/CythonModules/MF_BPR_Cython_Epoch.pyx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <marker date="1541089268388" expanded="true" signature="2337:2342" ph="..." />
-                <marker date="1541089268388" expanded="true" signature="2403:2412" ph="..." />
-              </folding>
+            <state relative-caret-position="666">
+              <caret line="172" column="83" selection-start-line="172" selection-start-column="83" selection-end-line="172" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -114,13 +119,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Recommenders/SlimBprRec.py" />
-        <option value="$PROJECT_DIR$/Recommenders/MfBprRec.py" />
         <option value="$PROJECT_DIR$/CythonModules/setup.py" />
         <option value="$PROJECT_DIR$/CythonModules/knn_recommend_cython.pyx" />
         <option value="$PROJECT_DIR$/CythonModules/MF_BPR_Cython_Epoch.pyx" />
         <option value="$PROJECT_DIR$/Recommenders/BasicItemKNNRec.py" />
         <option value="$PROJECT_DIR$/CythonModules/KnnRecCython.pyx" />
+        <option value="$PROJECT_DIR$/Recommenders/SlimBprRec.py" />
+        <option value="$PROJECT_DIR$/Recommenders/MfBprRec.py" />
         <option value="$PROJECT_DIR$/RecSysChallenge_AimiCollini.py" />
       </list>
     </option>
@@ -143,6 +148,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,14 +253,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="29" width="1896" height="1039" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.16684724" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.1608884" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.16522211" />
       <window_info id="Favorites" order="2" sideWeight="0.5008157" side_tool="true" weight="0.16522211" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32932165" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32932165" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24835886" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,16 +292,6 @@
     <entry file="file://$PROJECT_DIR$/Recommenders/TopPopRec.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Recommenders/SlimBprRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="126" column="35" lean-forward="true" selection-start-line="122" selection-start-column="4" selection-end-line="126" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python3.6/site-packages/Cython/Build/Dependencies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -319,16 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Recommenders/MfBprRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CythonModules/KnnRecCython.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -339,16 +323,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CythonModules/MF_BPR_Cython_Epoch.pyx">
+    <entry file="file://$PROJECT_DIR$/CythonModules/MF_BPR_Cython_Epoch.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
-        </state>
+        <state relative-caret-position="-702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Recommenders/BasicItemKNNRec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="-1257">
           <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -358,10 +340,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Recommenders/SlimBprRec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CythonModules/MF_BPR_Cython_Epoch.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="172" column="83" selection-start-line="172" selection-start-column="83" selection-end-line="172" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="187" column="27" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
+        <state relative-caret-position="2012">
+          <caret line="180" column="83" selection-start-line="180" selection-start-column="83" selection-end-line="180" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recommenders/MfBprRec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

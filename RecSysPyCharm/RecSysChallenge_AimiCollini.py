@@ -177,7 +177,8 @@ def use_mf_bpr(gen_sub=False):
 
     # logFile = open("Result_log.txt", "a")
 
-    recommender.fit(epochs=100, validate_every_N_epochs=2, URM_test=URM_test, batch_size=1, sgd_mode='sgd', learning_rate=1e-4)
+    recommender.fit(epochs=100, validate_every_N_epochs=10, start_validation_after_N_epochs=100, URM_test=URM_test,
+                    batch_size=1, sgd_mode='sgd', learning_rate=1e-4, user_reg=0.01)
 
     if gen_sub:
         generate_submission(recommender)
@@ -185,4 +186,6 @@ def use_mf_bpr(gen_sub=False):
         evaluate_algorithm(URM_test, recommender, at=10)
 
 
-use_knn(k=100, icm="art&alb")
+#use_knn(k=10, icm="art&alb")
+#use_slim_brp(epochs=10)
+use_mf_bpr()
