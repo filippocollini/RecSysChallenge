@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import pandas as pd
 import scipy.sparse as sps
 
@@ -9,7 +10,7 @@ from Recommenders.MfBprRec import MF_BPR_Cython
 
 # LOAD DATA FROM FILE TO DATATFRAMES
 
-project_dir = "/Users/filippocollini/RecSysChallenge/"
+project_dir = os.path.dirname(os.path.realpath(__file__))[:-13]
 
 train = pd.read_csv(project_dir+"all/train.csv")
 train.head()
@@ -188,4 +189,4 @@ def use_mf_bpr(gen_sub=False):
 
 #use_knn(k=10, icm="art&alb")
 #use_slim_brp(epochs=10)
-use_mf_bpr()
+#use_mf_bpr()
