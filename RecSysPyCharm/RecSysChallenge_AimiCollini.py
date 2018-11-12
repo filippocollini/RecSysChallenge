@@ -9,7 +9,6 @@ from Recommenders.MfBprRec import MF_BPR_Cython
 
 # LOAD DATA FROM FILE TO DATATFRAMES
 
-project_dir = "/home/alle/GitHub/RecSysChallenge/"
 project_dir = "/Users/filippocollini/RecSysChallenge/"
 
 train = pd.read_csv(project_dir+"all/train.csv")
@@ -122,7 +121,6 @@ def generate_submission(recommender):
 def use_top_pop(generate_sub=False):
 
     top_pop_recommender = TopPopRecommender()
-    top_pop_recommender = TopTopPopRecommender()
     top_pop_recommender.fit(URM_train)
 
     if generate_sub:
