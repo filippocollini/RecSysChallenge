@@ -11,12 +11,22 @@
 
 cimport numpy as np
 import numpy as np
+import tqdm
+
+cdef struct Triplet:
+    long user
+    long pos_item
+    long neg_item
 
 cdef class SlimBPRCythonEpoch:
 
-    cdef int n_users, n_items, nnz
+    cdef int n_users, n_items, nnz, URM_nnz
 
     cdef float learning_rate, positive_item_regularization, negative_item_regularization
+
+    cdef int[:] userSeenItems
+
+    cdef int[:] URM_mask_indices, URM_mask_indptr
 
     cdef double[:,:] similarity_matrix
 
@@ -31,60 +41,84 @@ cdef class SlimBPRCythonEpoch:
         self.negative_item_regularization = negative_item_regularization
         self.n_users = URM.shape[0]
         self.n_items = URM.shape[1]
-        self.URM = URM
+        self.URM_nnz = int(URM.nnz)
+        self.URM_mask_indices = URM.indices
+        self.URM_mask_indptr = URM.indptr
 
-    def sampleTriplet(self):
+        self.similarity_matrix = np.zeros((self.n_items, self.n_items))
+
+    cdef int[:] getSeenItems(self, long index):
+        return self.URM_mask_indices[self.URM_mask_indptr[index]:self.URM_mask_indptr[index + 1]]
+
+    def get_similarity_matrix(self):
+        return np.array(self.similarity_matrix)
+
+    cdef Triplet sampleTriplet(self):
+
+        cdef Triplet triplet = Triplet()
 
         # By randomly selecting a user in this way we could end up
         # with a user with no interactions
         # user_id = np.random.randint(0, self.n_users)
 
-        user_id = np.random.choice(self.n_users)
+        triplet.user = np.random.choice(self.n_users)
 
         # Get user seen items and choose one
-        userSeenItems = self.URM[user_id, :].indices
-        pos_item_id = np.random.choice(userSeenItems)
+        self.userSeenItems = self.getSeenItems(triplet.user)
+        triplet.pos_item = np.random.choice(self.userSeenItems)
 
         negItemSelected = False
 
         # It's faster to just try again then to build a mapping of the non-seen items
-        while (not negItemSelected):
-            neg_item_id = np.random.randint(0, self.n_items)
+        while not negItemSelected:
+            triplet.neg_item = np.random.randint(0, self.n_items)
 
-            if (neg_item_id not in userSeenItems):
+            if triplet.neg_item not in self.userSeenItems:
                 negItemSelected = True
 
-        return user_id, pos_item_id, neg_item_id
+        return triplet
 
     def epochIteration(self):
 
+        cdef Triplet triplet
+
+        cdef long user_id, positive_item_id, negative_item_id
+
+        cdef double gradient, x_ij, dp, dn
+
         # Get number of available interactions
-        numPositiveIteractions = int(self.URM.nnz * self.nnz)
+        cdef int numPositiveIteractions = int(self.URM_nnz * self.nnz)
 
         # Uniform user sampling without replacement
-        for num_sample in tqdm(range(numPositiveIteractions)):
+        for num_sample in range(numPositiveIteractions):
 
             # Sample
-            user_id, positive_item_id, negative_item_id = self.sampleTriplet()
+            triplet = self.sampleTriplet()
+            user_id = triplet.user
+            positive_item_id = triplet.pos_item
+            negative_item_id = triplet.neg_item
 
-            userSeenItems = self.URM[user_id, :].indices
+            userSeenItems = self.getSeenItems(triplet.user)
+
+            cdef double x_i = 0, x_j = 0
 
             # Prediction
-            x_i = self.similarity_matrix[positive_item_id, userSeenItems].sum()
-            x_j = self.similarity_matrix[negative_item_id, userSeenItems].sum()
+            for index in range(len(userSeenItems)-1):
+                x_i += self.similarity_matrix[positive_item_id, userSeenItems[index]]
+                x_j += self.similarity_matrix[negative_item_id, userSeenItems[index]]
 
             # Gradient
             x_ij = x_i - x_j
 
             gradient = 1 / (1 + np.exp(x_ij))
 
-            for i in userSeenItems:
+            for index in range(len(userSeenItems)-1):
                 dp = gradient - self.positive_item_regularization * x_i
-                self.similarity_matrix[positive_item_id, i] = self.similarity_matrix[positive_item_id, i] +\
-                    self.learning_rate * dp
+                self.similarity_matrix[positive_item_id, userSeenItems[index]] = self.similarity_matrix[positive_item_id, userSeenItems[index]] + \
+                                                                             self.learning_rate * dp
                 dn = gradient - self.negative_item_regularization * x_j
-                self.similarity_matrix[negative_item_id, i] = self.similarity_matrix[negative_item_id, i] -\
-                    self.learning_rate * dn
+                self.similarity_matrix[negative_item_id, userSeenItems[index]] = self.similarity_matrix[negative_item_id, userSeenItems[index]] - \
+                                                                             self.learning_rate * dn
 
             self.similarity_matrix[positive_item_id, positive_item_id] = 0
             self.similarity_matrix[negative_item_id, negative_item_id] = 0

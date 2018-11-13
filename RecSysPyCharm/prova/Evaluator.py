@@ -93,7 +93,7 @@ class Evaluator(object):
         URM_train_matrix = MultiLabelBinarizer(classes=self.b.get_tracks(), sparse_output=True).fit_transform(grouped)
         self.URM_train = URM_train_matrix.tocsr()
 
-        # Set target tracks TODO sistemare target tracks (eliminazione duplicati)
+        # Set target tracks
 
         if self.is_test:
             t_list = [t for sub in self.test_df['track_ids'] for t in sub]

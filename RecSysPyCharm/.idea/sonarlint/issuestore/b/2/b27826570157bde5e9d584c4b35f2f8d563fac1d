@@ -1,0 +1,14 @@
+
+wpython:S117J"`Rename this local variable "URM_row_flatten" to match the regular expression ^[_a-z][a-z0-9_]*$.(´àµ
+hpython:S117"QRename this parameter "S_UCM" to match the regular expression ^[_a-z][a-z0-9_]*$.(´¼€
+zpython:S1174"^Rename this local variable "URM_tfidf_csr" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜Èİ¥şÿÿÿÿ
+hpython:S116#"LRename this field "Slim" to match the regular expression ^[_a-z][_a-z0-9]*$.(İÅÚ™şÿÿÿÿ
+fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚»‹¼
+^python:S107"GMethod "fit" has 11 parameters, which is greater than the 7 authorized.(‚»‹¼
+mpython:S1177"VRename this local variable "S_avg" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ú·ÿ
+gpython:S117"PRename this parameter "Slim" to match the regular expression ^[_a-z][a-z0-9_]*$.(´¼€
+tpython:S117G"XRename this local variable "URM_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(ı¤ÕÊÿÿÿÿÿ
+hpython:S117"QRename this parameter "S_ICM" to match the regular expression ^[_a-z][a-z0-9_]*$.(´¼€
+spython:S1172"\Rename this local variable "URM_tfidf_T" to match the regular expression ^[_a-z][a-z0-9_]*$.(Âíªí
+qpython:S1173"ZRename this local variable "URM_tfidf" to match the regular expression ^[_a-z][a-z0-9_]*$.(ºëæ²
+zpython:S117D"cRename this local variable "slimBPR_prediction" to match the regular expression ^[_a-z][a-z0-9_]*$.(—ìŠõ

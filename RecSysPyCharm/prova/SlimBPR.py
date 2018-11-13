@@ -8,6 +8,8 @@ from Builder import Builder
 from Utils import Utils
 from sklearn import feature_extraction
 
+from prova.CythonModules.SlimBPRCythonEpoch import SlimBPRCythonEpoch
+
 class SlimBPR(object):
     """ SLIM_BPR recommender with cosine similarity and no shrinkage"""
 
@@ -28,6 +30,10 @@ class SlimBPR(object):
 
         # Use lil_matrix to incrementally build the similarity matrix
         self.similarity_matrix = sparse.lil_matrix((self.n_items, self.n_items))
+
+        self.cythonEpoch = SlimBPRCythonEpoch(URM, nnz=nnz, learning_rate=learning_rate,
+                                              positive_item_regularization=positive_item_regularization,
+                                              negative_item_regularization=negative_item_regularization)
 
 
     def sampleTriplet(self):
@@ -89,12 +95,14 @@ class SlimBPR(object):
     def get_S_SLIM_BPR(self, knn):
         print('Get S SLIM BPR...')
 
-        for numEpoch in range(self.epochs):
+        for numEpoch in tqdm(range(self.epochs)):
             print('Epoch:', numEpoch)
-            self.epochIteration()
+            self.cythonEpoch.epochIteration()
+            #self.epochIteration()
 
         print('Keeping only knn =', knn, '...')
-        similarity_matrix_csr = self.similarity_matrix.tocsr()
+        similarity_matrix_csr = sparse.csr_matrix(self.cythonEpoch.get_similarity_matrix())
+        #similarity_matrix_csr = self.similarity_matrix.tocsr()
 
         for r in tqdm(range(0, similarity_matrix_csr.shape[0])):
             indices = similarity_matrix_csr[r, :].data.argsort()[:-knn]

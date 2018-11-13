@@ -1,0 +1,9 @@
+
+lpython:S1009"URename method "epochIteration" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¿Ì¦Ž
+|python:S117."`Rename this local variable "negItemSelected" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÎðÏýÿÿÿÿ
+ƒpython:S117<"gRename this local variable "numPositiveIteractions" to match the regular expression ^[_a-z][a-z0-9_]*$.(éÄÙúÿÿÿÿ
+fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(ç‘«”
+bpython:S107"KMethod "__init__" has 8 parameters, which is greater than the 7 authorized.(ç‘«”
+kpython:S100""TRename method "sampleTriplet" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ä±Üå
+ppython:S117X"YRename this local variable "numEpoch" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÐºúÕ
+upython:S117+"^Rename this local variable "userSeenItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ðÿ þ

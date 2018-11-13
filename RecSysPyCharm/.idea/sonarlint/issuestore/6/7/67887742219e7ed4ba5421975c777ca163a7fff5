@@ -1,0 +1,13 @@
+
+bpython:S107"KMethod "__init__" has 9 parameters, which is greater than the 7 authorized.(¼¡˜
+Ppython:S1481¡"2Remove the unused local variable "tracks_indices".(ˆê”ÿÿÿÿÿ
+ppython:S117!"TRename this parameter "l2_reg_V" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãÁºııÿÿÿÿ
+fpython:S117:"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(«íã‡
+fpython:S117:"ORename this parameter "ICM" to match the regular expression ^[_a-z][a-z0-9_]*$.(«íã‡
+opython:S117I"XRename this local variable "URM_coo" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ó¹é
+tpython:S117J"XRename this local variable "URM_lil" to match the regular expression ^[_a-z][a-z0-9_]*$.(°òş¯øÿÿÿÿ
+tpython:S117K"XRename this local variable "ICM_lil" to match the regular expression ^[_a-z][a-z0-9_]*$.(ßÌÓøÿÿÿÿ
+jpython:S117s"SRename this parameter "ICM_lil" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰Úí’
+upython:S117¢"XRename this local variable "ICM_lil" to match the regular expression ^[_a-z][a-z0-9_]*$.(ßÌÓøÿÿÿÿ
+upython:S117£"XRename this local variable "URM_lil" to match the regular expression ^[_a-z][a-z0-9_]*$.(°òş¯øÿÿÿÿ
+epython:S116%"NRename this field "fastFM" to match the regular expression ^[_a-z][_a-z0-9]*$.(ä¸€

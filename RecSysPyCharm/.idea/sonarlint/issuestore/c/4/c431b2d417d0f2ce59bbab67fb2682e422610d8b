@@ -1,0 +1,29 @@
+
+6python:S125P"Remove this commented out code.(£”äÆ
+jpython:S117\"SRename this parameter "URM_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤Èµ˜
+fpython:S117Š"NRename this parameter "S1" to match the regular expression ^[_a-z][a-z0-9_]*$.(‡«äÈ
+lpython:S117²"ORename this parameter "ICM" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰ªœãúÿÿÿÿ
+6python:S125!"Remove this commented out code.(˜ªà‰
+upython:S117"]Rename this local variable "S_row_sparse" to match the regular expression ^[_a-z][a-z0-9_]*$.(š•Òª
+vpython:S117ö"^Rename this local variable "S_matrix_list" to match the regular expression ^[_a-z][a-z0-9_]*$.(£÷ÆÖ
+hpython:S100‹"PRename method "build_ICM" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ü˜‡Ÿ
+fpython:S117Š"NRename this parameter "S2" to match the regular expression ^[_a-z][a-z0-9_]*$.(‡«äÈ
+kpython:S100„"NRename method "get_UCM" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Å‰¨ ÿÿÿÿÿ
+qpython:S100ó"TRename method "get_S_URM_SVD" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(’¢˜Ìşÿÿÿÿ
+spython:S117ê"VRename this local variable "S_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢¾Í–ıÿÿÿÿ
+lpython:S117ó"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(’¢˜Ìşÿÿÿÿ
+spython:S117Î"VRename this local variable "S_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(èˆ—Äûÿÿÿÿ
+lpython:S117Ü"ORename this parameter "ICM" to match the regular expression ^[_a-z][a-z0-9_]*$.(òÔ“€úÿÿÿÿ
+spython:S100²"VRename method "build_S_ICM_knn" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(‰ªœãúÿÿÿÿ
+qpython:S100Ü"TRename method "get_S_ICM_SVD" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(òÔ“€úÿÿÿÿ
+wpython:S117‡"ZRename this local variable "UCM_tfidf" to match the regular expression ^[_a-z][a-z0-9_]*$.(îÕ±‰şÿÿÿÿ
+kpython:S100Å"TRename method "get_S_UCM_KNN" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(§ÿÈ
+fpython:S117Å"ORename this parameter "UCM" to match the regular expression ^[_a-z][a-z0-9_]*$.(§ÿÈ
+vpython:S117È"^Rename this local variable "S_matrix_list" to match the regular expression ^[_a-z][a-z0-9_]*$.(£÷ÆÖ
+vpython:S117ß"^Rename this local variable "S_matrix_list" to match the regular expression ^[_a-z][a-z0-9_]*$.(£÷ÆÖ
+hpython:S100Š"PRename method "get_S_avg" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(‡«äÈ
+spython:S117ş"VRename this local variable "S_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(“øİùÿÿÿÿ
+jpython:S100{"NRename method "get_URM" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(âĞ÷úÿÿÿÿ
+wpython:S117­"ZRename this local variable "ICM_tfidf" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚¡ôøÿÿÿÿ
+lpython:S117„"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(Å‰¨ ÿÿÿÿÿ
+6python:S125$"Remove this commented out code.(Ü€¤ı
