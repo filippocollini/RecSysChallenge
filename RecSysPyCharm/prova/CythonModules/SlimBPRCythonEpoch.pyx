@@ -51,6 +51,7 @@ cdef class SlimBPRCythonEpoch:
         return self.URM_mask_indices[self.URM_mask_indptr[index]:self.URM_mask_indptr[index + 1]]
 
     def get_similarity_matrix(self):
+
         return np.array(self.similarity_matrix)
 
     cdef Triplet sampleTriplet(self):
@@ -84,7 +85,7 @@ cdef class SlimBPRCythonEpoch:
 
         cdef long user_id, positive_item_id, negative_item_id
 
-        cdef double gradient, x_ij, dp, dn
+        cdef double gradient, x_ij, dp, dn, x_i, x_j
 
         # Get number of available interactions
         cdef int numPositiveIteractions = int(self.URM_nnz * self.nnz)
@@ -100,25 +101,24 @@ cdef class SlimBPRCythonEpoch:
 
             userSeenItems = self.getSeenItems(triplet.user)
 
-            cdef double x_i = 0, x_j = 0
+            x_i = 0
+            x_j = 0
 
             # Prediction
-            for index in range(len(userSeenItems)-1):
-                x_i += self.similarity_matrix[positive_item_id, userSeenItems[index]]
-                x_j += self.similarity_matrix[negative_item_id, userSeenItems[index]]
+            for index in userSeenItems:
+                x_i += self.similarity_matrix[positive_item_id, index]
+                x_j += self.similarity_matrix[negative_item_id, index]
 
             # Gradient
             x_ij = x_i - x_j
 
             gradient = 1 / (1 + np.exp(x_ij))
 
-            for index in range(len(userSeenItems)-1):
+            for index in userSeenItems:
                 dp = gradient - self.positive_item_regularization * x_i
-                self.similarity_matrix[positive_item_id, userSeenItems[index]] = self.similarity_matrix[positive_item_id, userSeenItems[index]] + \
-                                                                             self.learning_rate * dp
+                self.similarity_matrix[positive_item_id, index] += self.learning_rate * dp
                 dn = gradient - self.negative_item_regularization * x_j
-                self.similarity_matrix[negative_item_id, userSeenItems[index]] = self.similarity_matrix[negative_item_id, userSeenItems[index]] - \
-                                                                             self.learning_rate * dn
+                self.similarity_matrix[negative_item_id, index] -= self.learning_rate * dn
 
             self.similarity_matrix[positive_item_id, positive_item_id] = 0
             self.similarity_matrix[negative_item_id, negative_item_id] = 0

@@ -172,10 +172,10 @@ def hybrid_rec(is_test):
 
     S_ICM = b.build_S_ICM_knn(b.build_ICM(), 250)
     S_UCM = b.get_S_UCM_KNN(b.get_UCM(ev.get_URM_train()), 500)
-    Slim = SlimBPR.SlimBPR(ev.get_URM_train(), epochs=10).get_S_SLIM_BPR(500)
+    Slim = SlimBPR.SlimBPR(ev.get_URM_train(), epochs=1).get_S_SLIM_BPR(500)
 
     rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
-            S_ICM, S_UCM, Slim, is_test, alfa=0, avg=0.15)
+            S_ICM, S_UCM, Slim, is_test, alfa=0, avg=0.20)
 
     """
     alfa*((1-avg)*collab + avg*content) + (1-alfa)*slimBPR
@@ -184,6 +184,7 @@ def hybrid_rec(is_test):
     only content 0.0631
     content+collab con  avg=0.20 0.10864
                         avg=0.10 0.10849
+    only slim con   epoch=3 0.08206
     
     """
 
