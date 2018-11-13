@@ -9,7 +9,6 @@ from time import sleep
 from scipy.sparse.linalg import svds
 from Builder import Builder
 
-
 """
 This hybrid recommender combines three different recommenders in these way:
 

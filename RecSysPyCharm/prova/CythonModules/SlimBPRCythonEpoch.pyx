@@ -1,34 +1,37 @@
-import numpy as np
-import time
-from tqdm import tqdm
-import scipy as sc
-from scipy import sparse
-from scipy.sparse.linalg import norm
-from Builder import Builder
-from Utils import Utils
-from sklearn import feature_extraction
+#cython: boundscheck=False
+#cython: wraparound=False
+#cython: initializedcheck=False
+#cython: language_level=3
+#cython: nonecheck=False
+#cython: cdivision=True
+#cython: unpack_method_calls=True
+#cython: overflowcheck=False
 
-class SlimBPR(object):
-    """ SLIM_BPR recommender with cosine similarity and no shrinkage"""
+#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+
+cimport numpy as np
+import numpy as np
+
+cdef class SlimBPRCythonEpoch:
+
+    cdef int n_users, n_items, nnz
+
+    cdef float learning_rate, positive_item_regularization, negative_item_regularization
+
+    cdef double[:,:] similarity_matrix
 
     def __init__(self, URM,
-                 learning_rate=0.01,
-                 epochs=1,
-                 positive_item_regularization=1.0,
-                 negative_item_regularization=1.0,
-                 nnz=1):
-        self.URM = URM
+                 nnz = 1,
+                 learning_rate = 0.01,
+                 positive_item_regularization = 1.0,
+                 negative_item_regularization = 1.0):
+        self.nnz = nnz
         self.learning_rate = learning_rate
-        self.epochs = epochs
         self.positive_item_regularization = positive_item_regularization
         self.negative_item_regularization = negative_item_regularization
-        self.nnz = nnz
-        self.n_users = self.URM.shape[0]
-        self.n_items = self.URM.shape[1]
-
-        # Use lil_matrix to incrementally build the similarity matrix
-        self.similarity_matrix = sparse.lil_matrix((self.n_items, self.n_items))
-
+        self.n_users = URM.shape[0]
+        self.n_items = URM.shape[1]
+        self.URM = URM
 
     def sampleTriplet(self):
 
@@ -85,20 +88,3 @@ class SlimBPR(object):
 
             self.similarity_matrix[positive_item_id, positive_item_id] = 0
             self.similarity_matrix[negative_item_id, negative_item_id] = 0
-
-    def get_S_SLIM_BPR(self, knn):
-        print('Get S SLIM BPR...')
-
-        for numEpoch in range(self.epochs):
-            print('Epoch:', numEpoch)
-            self.epochIteration()
-
-        print('Keeping only knn =', knn, '...')
-        similarity_matrix_csr = self.similarity_matrix.tocsr()
-
-        for r in tqdm(range(0, similarity_matrix_csr.shape[0])):
-            indices = similarity_matrix_csr[r, :].data.argsort()[:-knn]
-            similarity_matrix_csr[r, :].data[indices] = 0
-        sparse.csr_matrix.eliminate_zeros(similarity_matrix_csr)
-
-        return similarity_matrix_csr

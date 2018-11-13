@@ -1,6 +1,7 @@
 import numpy as np
 import scipy as sc
 import pandas as pd
+import os as os
 from scipy import sparse
 from scipy.sparse.linalg import svds
 from pandas import DataFrame
@@ -26,7 +27,7 @@ class Builder(object):
 
     def __init__(self):
 
-        project_dir = "/Users/filippocollini/RecSysChallenge/"
+        project_dir = os.path.dirname(os.path.realpath(__file__))[:-19]
 
         self.train_final = pd.read_csv('Data/train.csv')
         #self.playlists_final = pd.read_csv('Data/playlists_final.csv', sep='\t')
@@ -69,9 +70,9 @@ class Builder(object):
         return artists_unique
 
     def get_albums(self):
-        albums = ["""int(a.strip("[]"))"""
-                  for a in self.tracks_final['album_id']]
-                  #if a.strip("[]") != "None" and a.strip("[]") != ""
+        albums = [a for a in self.tracks_final['album_id']]
+        """int(a.strip("[]")) instead of a"""
+        # if a.strip("[]") != "None" and a.strip("[]") != ""
 
         albums_unique = self.unique_and_sorted(albums)
         return albums_unique

@@ -3,6 +3,7 @@ from Evaluator import Evaluator
 from Recommenders import ItemBasedRec, CollaborativeFilteringRec, ItemUserAvgRec,\
     SlimBPRRec, SVDRec, RoundRobinRec, HybridRec, TopPopRec
 import SlimBPR
+import os as os
 
 """
 This file is a control panel to test or make predictions with provided recommenders.
@@ -165,7 +166,7 @@ def hybrid_rec(is_test):
     print('*** Test Hybrid Recommender ***')
 
     b = Builder()
-    ev = Evaluator()
+    ev = Evaluator(is_test=is_test)
     ev.split()
     rec = HybridRec.HybridRec()
 
@@ -174,7 +175,9 @@ def hybrid_rec(is_test):
     Slim = SlimBPR.SlimBPR(ev.get_URM_train()).get_S_SLIM_BPR(500)
 
     rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
-            S_ICM, S_UCM, Slim, True, 0.20, 0.74)
+            S_ICM, S_UCM, Slim, is_test, 1, 0)
+
+    """alfa = 0.74, avg = 0.20"""
 
     train_df = rec.recommend()
 
@@ -183,4 +186,4 @@ def hybrid_rec(is_test):
         print('Hybrid MAP@5:', map5)
     else:
         print('Prediction saved!')
-        train_df.to_csv('Hybrid.csv', sep=',', index=False)
+        train_df.to_csv(os.path.dirname(os.path.realpath(__file__))[:-19] + "/all/sub.csv", sep=',', index=False)

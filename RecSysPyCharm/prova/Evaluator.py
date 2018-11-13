@@ -8,15 +8,18 @@ import numpy as np
 from tqdm import *
 from Builder import Builder
 
+
 class Evaluator(object):
 
-    def __init__(self):
+    def __init__(self, is_test=True):
         self.b = Builder()
         self.URM_train = None
         self.test_df = None
         self.target_playlists = None
         self.target_tracks = None
         self.num_playlists_to_test = 10000
+        self.is_test = is_test
+        self.num_playlists_to_evaluate = 10000
 
     def get_URM_train(self):
         return self.URM_train
@@ -25,7 +28,10 @@ class Evaluator(object):
         return self.test_df
 
     def get_target_playlists(self):
-        return self.target_playlists
+        if self.is_test:
+            return self.target_playlists
+        else:
+            return self.b.get_target_playlists()
 
     def get_target_tracks(self):
         return self.target_tracks
@@ -46,14 +52,21 @@ class Evaluator(object):
             lambda x: list(x['track_id']))
         grouped.sort_index(inplace=True)
 
+        # Set num_playlist_to_evaluate
+
+        self.num_playlists_to_evaluate = int(self.b.get_URM().shape[0] * 0.20)
+
         # Set num_playlist_to_test
 
-        self.num_playlists_to_test = int(self.b.get_URM().shape[0] * 0.20)
+        if self.is_test:
+            self.num_playlists_to_test = self.num_playlists_to_evaluate
+        else:
+            self.num_playlists_to_test = self.b.get_target_playlists().shape[0]
 
         # Find indices of playlists to test and set target_playlists
 
         testable_idx = grouped[[len(x) >= 10 for x in grouped]].index
-        test_idx = np.random.choice(testable_idx, self.num_playlists_to_test, replace=False)
+        test_idx = np.random.choice(testable_idx, self.num_playlists_to_evaluate, replace=False)
         test_idx.sort()
         self.target_playlists = test_idx
 
@@ -80,9 +93,12 @@ class Evaluator(object):
         URM_train_matrix = MultiLabelBinarizer(classes=self.b.get_tracks(), sparse_output=True).fit_transform(grouped)
         self.URM_train = URM_train_matrix.tocsr()
 
-        # Set target tracks
+        # Set target tracks TODO sistemare target tracks (eliminazione duplicati)
 
-        t_list = [t for sub in self.test_df['track_ids'] for t in sub]
+        if self.is_test:
+            t_list = [t for sub in self.test_df['track_ids'] for t in sub]
+        else:
+            t_list = [t for sub in grouped[self.b.get_target_playlists()] for t in sub]
         t_list_unique = list(set(t_list))
         t_list_unique.sort()
 
@@ -112,7 +128,7 @@ class Evaluator(object):
         train_matrix = pd.DataFrame.as_matrix(train_df['track_ids'])
         test_matrix = pd.DataFrame.as_matrix(self.test_df['track_ids'])
 
-        for i in range(0, self.num_playlists_to_test):
+        for i in range(0, self.num_playlists_to_evaluate):
             map5 = map5 + self.ap(train_matrix[i], test_matrix[i])
 
-        return map5/self.num_playlists_to_test
+        return map5/self.num_playlists_to_evaluate
