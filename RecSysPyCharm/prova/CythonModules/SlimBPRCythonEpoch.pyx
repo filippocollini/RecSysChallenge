@@ -45,6 +45,7 @@ cdef class SlimBPRCythonEpoch:
         self.URM_mask_indices = URM.indices
         self.URM_mask_indptr = URM.indptr
 
+        # Initialize similarity matrix
         self.similarity_matrix = np.zeros((self.n_items, self.n_items))
 
     cdef int[:] getSeenItems(self, long index):
@@ -85,7 +86,7 @@ cdef class SlimBPRCythonEpoch:
 
         cdef long user_id, positive_item_id, negative_item_id
 
-        cdef double gradient, x_ij, dp, dn, x_i, x_j
+        cdef double gradient, x_ij, x_i, x_j
 
         # Get number of available interactions
         cdef int numPositiveIteractions = int(self.URM_nnz * self.nnz)
@@ -115,10 +116,8 @@ cdef class SlimBPRCythonEpoch:
             gradient = 1 / (1 + np.exp(x_ij))
 
             for index in userSeenItems:
-                dp = gradient - self.positive_item_regularization * x_i
-                self.similarity_matrix[positive_item_id, index] += self.learning_rate * dp
-                dn = gradient - self.negative_item_regularization * x_j
-                self.similarity_matrix[negative_item_id, index] -= self.learning_rate * dn
+                self.similarity_matrix[positive_item_id, index] += self.learning_rate * (gradient - self.positive_item_regularization * x_i)
+                self.similarity_matrix[negative_item_id, index] -= self.learning_rate * (gradient - self.negative_item_regularization * x_j)
 
             self.similarity_matrix[positive_item_id, positive_item_id] = 0
             self.similarity_matrix[negative_item_id, negative_item_id] = 0

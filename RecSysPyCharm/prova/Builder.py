@@ -29,7 +29,7 @@ class Builder(object):
 
         project_dir = os.path.dirname(os.path.realpath(__file__))[:-19]
 
-        self.train_final = pd.read_csv('Data/train.csv')
+        self.train_final = pd.read_csv(project_dir+'all/train.csv')
         #self.playlists_final = pd.read_csv('Data/playlists_final.csv', sep='\t')
         self.tracks_final = pd.read_csv(project_dir+"all/tracks.csv")
         self.target_playlists = pd.read_csv(project_dir+"all/target_playlists.csv")
@@ -151,8 +151,7 @@ class Builder(object):
         albums_df = self.tracks_final.reindex(columns=['track_id', 'album_id'])
         albums_df.sort_values(by='track_id', inplace=True)
 
-        albums_list = [[a]
-                       for a in albums_df['album_id']]
+        albums_list = [[a] for a in albums_df['album_id']]
         icm_albums = MultiLabelBinarizer(classes=self.get_albums(), sparse_output=True).fit_transform(albums_list)
         icm_albums_csr = icm_albums.tocsr()
 

@@ -56,35 +56,45 @@ class Evaluator(object):
 
         self.num_playlists_to_evaluate = int(self.b.get_URM().shape[0] * 0.20)
 
-        # Set num_playlist_to_test
-
         if self.is_test:
+
+            # Set num_playlist_to_test
+
             self.num_playlists_to_test = self.num_playlists_to_evaluate
+
+            # Find indices of playlists to test and set target_playlists
+
+            testable_idx = grouped[[len(x) >= 15 for x in grouped]].index
+            test_idx = np.random.choice(testable_idx, self.num_playlists_to_evaluate, replace=False)
+            test_idx.sort()
+            self.target_playlists = test_idx
+
+            # Extract the test set portion of the data set
+
+            test_mask = grouped[test_idx]
+            test_mask.sort_index(inplace=True)
+
+            # Iterate over the test set to randomly remove 5 tracks from each playlist
+
+            test_df_list = []
+            i = 0
+            for t in test_mask:
+                t_tracks_to_test = np.random.choice(t, 10, replace=False)
+                test_df_list.append([test_idx[i], t_tracks_to_test])
+                for tt in t_tracks_to_test:
+                    t.remove(tt)
+                i += 1
         else:
             self.num_playlists_to_test = self.b.get_target_playlists().shape[0]
+            self.target_playlists = list(self.b.get_target_playlists())
+            test_df_list = []
+            i = 0
+            test_mask = grouped[self.target_playlists]
+            test_mask.sort_index(inplace=True)
+            for t in test_mask:
+                test_df_list.append([self.target_playlists[i], t])
+                i += 1
 
-        # Find indices of playlists to test and set target_playlists
-
-        testable_idx = grouped[[len(x) >= 10 for x in grouped]].index
-        test_idx = np.random.choice(testable_idx, self.num_playlists_to_evaluate, replace=False)
-        test_idx.sort()
-        self.target_playlists = test_idx
-
-        # Extract the test set portion of the data set
-
-        test_mask = grouped[test_idx]
-        test_mask.sort_index(inplace=True)
-
-        # Iterate over the test set to randomly remove 5 tracks from each playlist
-
-        test_df_list = []
-        i = 0
-        for t in test_mask:
-            t_tracks_to_test = np.random.choice(t, 5, replace=False)
-            test_df_list.append([test_idx[i], t_tracks_to_test])
-            for tt in t_tracks_to_test:
-                t.remove(tt)
-            i += 1
 
         # Build test_df and URM_train
 
@@ -95,10 +105,7 @@ class Evaluator(object):
 
         # Set target tracks
 
-        if self.is_test:
-            t_list = [t for sub in self.test_df['track_ids'] for t in sub]
-        else:
-            t_list = [t for sub in grouped[self.b.get_target_playlists()] for t in sub]
+        t_list = [t for sub in self.test_df['track_ids'] for t in sub]
         t_list_unique = list(set(t_list))
         t_list_unique.sort()
 

@@ -53,14 +53,14 @@ def collaborative_filtering(is_test):
     print('*** Test Collaborative Filtering Recommender ***')
 
     b = Builder()
-    ev = Evaluator()
+    ev = Evaluator(is_test=is_test)
     ev.split()
     rec = CollaborativeFilteringRec.CollaborativeFilteringRec()
 
     S_UCM = b.get_S_UCM_KNN(b.get_UCM(b.get_URM()), 500)
 
     rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
-            S_UCM, True)
+            S_UCM, is_test)
     train_df = rec.recommend()
 
     if is_test:
@@ -68,7 +68,7 @@ def collaborative_filtering(is_test):
         print('CollaborativeFiltering MAP@5:', map5)
     else:
         print('Prediction saved!')
-        train_df.to_csv('CollaborativeFiltering.csv', sep=',', index=False)
+        train_df.to_csv(os.path.dirname(os.path.realpath(__file__))[:-19] + "/all/subCollab.csv", sep=',', index=False)
 
 
 def item_user_avg(is_test):
@@ -118,12 +118,12 @@ def SVD(is_test):
     print('*** Test SVD Recommender ***')
 
     b = Builder()
-    ev = Evaluator()
+    ev = Evaluator(is_test=is_test)
     ev.split()
     rec = SVDRec.SVDRec()
 
     rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
-            b.build_ICM(), k=100, knn=250, is_test=is_test)
+            b.build_ICM(), k=10, knn=250, is_test=is_test)
     train_df = rec.recommend()
 
     if is_test:
@@ -170,8 +170,8 @@ def hybrid_rec(is_test):
     ev.split()
     rec = HybridRec.HybridRec()
 
-    S_ICM = b.build_S_ICM_knn(b.build_ICM(), 250)
-    S_UCM = b.get_S_UCM_KNN(b.get_UCM(ev.get_URM_train()), 500)
+    S_ICM = b.build_S_ICM_knn(b.build_ICM(), 300)
+    S_UCM = b.get_S_UCM_KNN(b.get_UCM(ev.get_URM_train()), 600)
     Slim = SlimBPR.SlimBPR(ev.get_URM_train(),
                            epochs=8,
                            learning_rate=0.001,
@@ -180,24 +180,25 @@ def hybrid_rec(is_test):
                            ).get_S_SLIM_BPR(500)
 
     rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
-            S_ICM, S_UCM, Slim, is_test, alfa=0.60, avg=0.20)
+            S_ICM, S_UCM, Slim, is_test, alfa=0.50, avg=0.30)
 
     """
+    0.60, 0.20
     alfa*((1-avg)*collab + avg*content) + (1-alfa)*slimBPR
     
-    only collab 0.1042
-    only content 0.0631
-    content+collab  con avg=0.20 0.10864
-                        avg=0.10 0.10849
+    only collab     con knn=500 0.09458119561301138
+                        knn=600 0.0966069048956343
+    only content        knn=250 0.05117239111589418
+                        knn=300 0.051885048465482864
+    content+collab  con avg=0.20 0.09778687538054094
+                        avg=0.30 0.09987806931012282
                         
-    only slim       con lr=0.01     epoch=1 0.08915
-                        lr=0.001    epoch=2 0.09161
-                                    epoch=4 0.094565
-                                    epoch=8 reg=1 0.095607
+    only slim       con lr=0.01     epoch=1 0.0874042765419505
+                        lr=0.001    epoch=4 0.089788462052809
+                                    epoch=8 0.09238170363133094
                                     
-    all together    con alfa=0.55 0.113296
-                        alfa=0.60 0.114872
-                        alfa=0.60 lr=0.001 epoch=8 reg=1 0.1143289
+    all together    con alfa=0.60 0.10745100746215795
+                        alfa=0.50 0.10748996628419637
     """
 
     train_df = rec.recommend()

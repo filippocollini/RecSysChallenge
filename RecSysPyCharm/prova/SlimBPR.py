@@ -14,7 +14,7 @@ class SlimBPR(object):
     """ SLIM_BPR recommender with cosine similarity and no shrinkage"""
 
     def __init__(self, URM,
-                 learning_rate=0.001,
+                 learning_rate=0.01,
                  epochs=1,
                  positive_item_regularization=1,
                  negative_item_regularization=1,
