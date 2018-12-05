@@ -54,6 +54,8 @@ class HybridRec(object):
         # Weighted average of S_ICM and S_UCM
         S_avg = (self.avg * self.S_ICM) + ((1 - self.avg) * self.S_UCM)
 
+        ordered_ps_id = b.get_ordered_playlists_id()
+
         print('Predicting...', flush=True)
         for i in tqdm(range(0, self.num_playlist_to_recommend)):
             # Iterate over indices of target playlists
@@ -62,25 +64,31 @@ class HybridRec(object):
             # Compute the indices of the known tracks
             known_indices = np.nonzero(self.URM[index].toarray().flatten())
 
-            # Calculate recommenders contributions
-            avg_prediction = URM_tfidf_csr[index, :] * S_avg
+            # Consider order for ordered playlists
+            if index in ordered_ps_id:
+                URM_tfidf_adjusted = b.adjust_order(URM_tfidf_csr[index, :], index)
+            else:
+                URM_tfidf_adjusted = URM_tfidf_csr[index, :]
 
-            slimBPR_prediction = URM_tfidf_csr[index, :] * self.Slim
+            # Calculate recommenders contributions
+            avg_prediction = URM_tfidf_adjusted * S_avg
+
+            slimBPR_prediction = URM_tfidf_adjusted * self.Slim
 
             # Weighted sum of recommendations
             URM_row = (self.alfa * avg_prediction) + ((1 - self.alfa) * slimBPR_prediction)
 
-            # Make top-5 prediction
+            # Make top-10 prediction
             URM_row_flatten = URM_row.toarray().flatten()
-            top_5_indices = b.get_top_10_indices(URM_row_flatten, nontarget_indices, known_indices, [])
-            top_5_tracks = b.get_top_10_tracks_from_indices(top_5_indices)
-            top_5_tracks_string = ' '.join([str(i) for i in top_5_tracks])
+            top_10_indices = b.get_top_10_indices(URM_row_flatten, nontarget_indices, known_indices, [])
+            top_10_tracks = b.get_top_10_tracks_from_indices(top_10_indices)
+            top_10_tracks_string = ' '.join([str(i) for i in top_10_tracks])
 
             # Create dataset
             if self.is_test:
-                dataframe_list.append([self.target_playlists[i], top_5_tracks])
+                dataframe_list.append([self.target_playlists[i], top_10_tracks])
             else:
-                dataframe_list.append([self.target_playlists[i], top_5_tracks_string])
+                dataframe_list.append([self.target_playlists[i], top_10_tracks_string])
 
         dataframe = pd.DataFrame(dataframe_list, columns=['playlist_id', 'track_ids'])
 

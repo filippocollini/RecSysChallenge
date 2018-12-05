@@ -1,10 +1,10 @@
 
+~python:S117d"[Rename this local variable "target_MAP" to match the regular expression ^[_a-z][a-z0-9_]*$.(³ƒşêÿÿÿÿÿ8¬È–Éğ,
+€python:S117—"aRename this local variable "ICM_all_duration" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰ˆ°µ8¬È–Éğ,
 wpython:S117L"TRename this parameter "URM_test" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜‹İ¦øÿÿÿÿ8¬È–Éğ,
 }python:S117M"_Rename this local variable "cumulative_MAP" to match the regular expression ^[_a-z][a-z0-9_]*$.(…š½Ï8¬È–Éğ,
-~python:S117d"[Rename this local variable "target_MAP" to match the regular expression ^[_a-z][a-z0-9_]*$.(³ƒşêÿÿÿÿÿ8¬È–Éğ,
-‚python:S117“"^Rename this local variable "ICM_all_album" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œ‡ô¨ûÿÿÿÿ8¬È–Éğ,
-ppython:S1542A"LRename function "MAP" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(È ñúÿÿÿÿ8¬È–Éğ,
 Cpython:S125³"Remove this commented out code.(¨ë©àüÿÿÿÿ8¬È–Éğ,
-€python:S117—"aRename this local variable "ICM_all_duration" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰ˆ°µ8¬È–Éğ,
->python:S125¾"Remove this commented out code.(—‘Ñ8¬È–Éğ,
 ~python:S117"_Rename this local variable "ICM_all_artist" to match the regular expression ^[_a-z][a-z0-9_]*$.(ïØªµ8¬È–Éğ,
+‚python:S117“"^Rename this local variable "ICM_all_album" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œ‡ô¨ûÿÿÿÿ8¬È–Éğ,
+>python:S125¾"Remove this commented out code.(—‘Ñ8¬È–Éğ,
+ppython:S1542A"LRename function "MAP" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(È ñúÿÿÿÿ8¬È–Éğ,

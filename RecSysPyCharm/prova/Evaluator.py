@@ -54,7 +54,8 @@ class Evaluator(object):
 
         # Set num_playlist_to_evaluate
 
-        self.num_playlists_to_evaluate = int(self.b.get_URM().shape[0] * 0.20)
+        self.num_playlists_to_evaluate = int(grouped.size)
+        #self.num_playlists_to_evaluate = 10000
 
         if self.is_test:
 
@@ -64,7 +65,7 @@ class Evaluator(object):
 
             # Find indices of playlists to test and set target_playlists
 
-            testable_idx = grouped[[len(x) >= 15 for x in grouped]].index
+            testable_idx = grouped[[len(x) >= 1 for x in grouped]].index
             test_idx = np.random.choice(testable_idx, self.num_playlists_to_evaluate, replace=False)
             test_idx.sort()
             self.target_playlists = test_idx
@@ -76,10 +77,14 @@ class Evaluator(object):
 
             # Iterate over the test set to randomly remove 5 tracks from each playlist
 
+            ord_playlists = self.b.get_ordered_playlists()
             test_df_list = []
             i = 0
             for t in test_mask:
-                t_tracks_to_test = np.random.choice(t, 10, replace=False)
+                if test_idx[i] in self.b.get_ordered_playlists()[:4999]:
+                    t_tracks_to_test = np.asarray(ord_playlists[test_idx[i]][int(-(len(t) * 0.2)):])
+                else:
+                    t_tracks_to_test = np.random.choice(t, int(len(t) * 0.2), replace=False)
                 test_df_list.append([test_idx[i], t_tracks_to_test])
                 for tt in t_tracks_to_test:
                     t.remove(tt)
@@ -94,7 +99,6 @@ class Evaluator(object):
             for t in test_mask:
                 test_df_list.append([self.target_playlists[i], t])
                 i += 1
-
 
         # Build test_df and URM_train
 
@@ -115,7 +119,6 @@ class Evaluator(object):
         """
         Compute AP = Average Precision
         """
-
         is_relevant = np.in1d(recommended_items, relevant_items, assume_unique=True)
 
         # Cumulative sum: precision at 1, at 2, at 3 ...
@@ -136,6 +139,6 @@ class Evaluator(object):
         test_matrix = pd.DataFrame.as_matrix(self.test_df['track_ids'])
 
         for i in range(0, self.num_playlists_to_evaluate):
-            map5 = map5 + self.ap(train_matrix[i], test_matrix[i])
+            map5 += self.ap(train_matrix[i], test_matrix[i])
 
         return map5/self.num_playlists_to_evaluate

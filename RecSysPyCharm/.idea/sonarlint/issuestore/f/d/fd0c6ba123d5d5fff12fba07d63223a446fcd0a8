@@ -1,0 +1,6 @@
+
+]python:S107"FMethod "fit" has 9 parameters, which is greater than the 7 authorized.(Çªãº
+fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(Çªãº
+fpython:S117"ORename this parameter "ICM" to match the regular expression ^[_a-z][a-z0-9_]*$.(≥ç†ø
+tpython:S1173"XRename this local variable "URM_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ç∫î¸¯ˇˇˇˇ
+wpython:S1176"`Rename this local variable "URM_row_flatten" to match the regular expression ^[_a-z][a-z0-9_]*$.(è¥‡µ

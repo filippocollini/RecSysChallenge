@@ -1,0 +1,6 @@
+
+fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿†Êê
+hpython:S117"QRename this parameter "MfRec" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿†Êê
+|python:S117+"`Rename this local variable "URM_row_flatten" to match the regular expression ^[_a-z][a-z0-9_]*$.(¨ıÛûÿÿÿÿ
+ipython:S116"MRename this field "MfRec" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬±íüÿÿÿÿ
+1python:S1700"Rename field "MfRec"(¬±íüÿÿÿÿ

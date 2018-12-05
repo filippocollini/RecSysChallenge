@@ -4,6 +4,8 @@ from tqdm import tqdm
 import scipy as sc
 from scipy import sparse
 
+from prova.CythonModules.MfBPRCythonEpoch import MfBPRCythonEpoch
+
 """
 Matrix Factorization with a Bayesian Personalized Ranking approach.
 """
@@ -11,16 +13,19 @@ Matrix Factorization with a Bayesian Personalized Ranking approach.
 class MFBPR(object):
 
     def __init__(self, URM,
+                 nnz=0.1,
                  n_factors=10,
                  learning_rate=0.1,
                  epochs=10,
                  user_regularization=0.1,
                  positive_item_regularization=0.1,
                  negative_item_regularization=0.1):
+
         self.URM = URM
         self.n_factors = n_factors
         self.learning_rate = learning_rate
         self.epochs = epochs
+        self.nnz = nnz
 
         self.user_regularization = user_regularization
         self.positive_item_regularization = positive_item_regularization
@@ -30,6 +35,14 @@ class MFBPR(object):
         self.n_items = self.URM.shape[1]
         self.user_factors = np.random.random_sample((self.n_users, n_factors))
         self.item_factors = np.random.random_sample((self.n_items, n_factors))
+
+        self.cython_epoch = MfBPRCythonEpoch(URM,
+                                             nnz=nnz,
+                                             n_factors=n_factors,
+                                             learning_rate=learning_rate,
+                                             user_regularization=user_regularization,
+                                             positive_item_regularization=positive_item_regularization,
+                                             negative_item_regularization=negative_item_regularization)
 
     def sampleTriplet(self):
 
@@ -85,12 +98,14 @@ class MFBPR(object):
     def fit(self):
         print('Fitting MFBPR...')
 
-        for numEpoch in range(self.epochs):
+        for numEpoch in tqdm(range(self.epochs)):
             print('Epoch:', numEpoch)
-            self.epochIteration()
+            self.cython_epoch.epochIteration()
+            #self.epochIteration()
 
     def predict(self, u):
-        rec = np.dot(self.user_factors[u], self.item_factors.T)
+        rec = self.cython_epoch.get_prediction(u)
+        #rec = np.dot(self.user_factors[u], self.item_factors.T)
         rec_csr = sparse.csr_matrix(rec)
         return rec_csr
 

@@ -20,9 +20,9 @@ cdef struct Triplet:
 
 cdef class SlimBPRCythonEpoch:
 
-    cdef int n_users, n_items, nnz, URM_nnz
+    cdef int n_users, n_items, URM_nnz
 
-    cdef float learning_rate, positive_item_regularization, negative_item_regularization
+    cdef float learning_rate, positive_item_regularization, negative_item_regularization, nnz
 
     cdef int[:] userSeenItems
 
@@ -52,7 +52,6 @@ cdef class SlimBPRCythonEpoch:
         return self.URM_mask_indices[self.URM_mask_indptr[index]:self.URM_mask_indptr[index + 1]]
 
     def get_similarity_matrix(self):
-
         return np.array(self.similarity_matrix)
 
     cdef Triplet sampleTriplet(self):

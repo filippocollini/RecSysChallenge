@@ -30,11 +30,13 @@ class Builder(object):
         project_dir = os.path.dirname(os.path.realpath(__file__))[:-19]
 
         self.train_final = pd.read_csv(project_dir+'all/train.csv')
-        #self.playlists_final = pd.read_csv('Data/playlists_final.csv', sep='\t')
         self.tracks_final = pd.read_csv(project_dir+"all/tracks.csv")
         self.target_playlists = pd.read_csv(project_dir+"all/target_playlists.csv")
-        #self.target_tracks = pd.read_csv('Data/target_tracks.csv', sep='\t')
         self.playlists = self.get_playlists()
+
+        self.ordered_playlists = pd.read_csv(project_dir+"all/train_sequential.csv")
+        self.grouped_ord_pls = self.ordered_playlists.groupby('playlist_id', as_index=True)\
+                                                     .apply(lambda x: list(x['track_id']))
 
     # GET DATAFRAMES
 
@@ -103,6 +105,22 @@ class Builder(object):
     def get_target_playlist_index(self, target_playlist):
         return np.where(self.playlists == target_playlist)[0][0]
 
+    def adjust_order(self, row, index):
+        nonzero = row[row != 0].flatten()
+        v = (nonzero.max() - nonzero.min()) / nonzero.size
+        tracks = self.grouped_ord_pls[index]
+        r = row.toarray().flatten()
+        for i in range(0, r.size):
+            if r[i] != 0:
+                r[i] += v * (tracks.index(i) + 1)
+        return sparse.csr_matrix(r)
+
+    def get_ordered_playlists_id(self):
+        return self.ordered_playlists["playlist_id"].unique()
+
+    def get_ordered_playlists(self):
+        return self.grouped_ord_pls
+
     def get_all_tracks(self):
         tracks = [t for t in self.tracks_final['track_id']]
         tracks.sort()
@@ -166,7 +184,7 @@ class Builder(object):
         """
 
         # 4 - Stack together
-        ICM = sparse.hstack((icm_artists_csr, icm_albums_csr))
+        ICM = sparse.hstack((0.4*icm_artists_csr, 0.6*icm_albums_csr))
 
         # 5 - Tf-idf
         ICM_tfidf = feature_extraction.text.TfidfTransformer().fit_transform(ICM)
@@ -193,7 +211,7 @@ class Builder(object):
         return S
 
 
-    def get_S_UCM_KNN(self, UCM, knn):
+    def get_S_UCM_KNN(self, UCM, knn, shrink=10):
         print('Building S from UCM with knn =', knn, '...')
 
         S_matrix_list = []
@@ -203,10 +221,12 @@ class Builder(object):
 
         for i in tqdm(range(0, UCM.shape[1])):
             S_row = UCM_T[i] * UCM
+
             r = S_row.data.argsort()[:-knn]
             S_row.data[r] = 0
 
             sparse.csr_matrix.eliminate_zeros(S_row)
+
             S_matrix_list.append(S_row)
 
         S = sc.sparse.vstack(S_matrix_list)
@@ -267,6 +287,3 @@ class Builder(object):
         S = (a * S1) + ((1-a) * S2)
 
         return S
-
-
-print(Builder().build_ICM().shape)

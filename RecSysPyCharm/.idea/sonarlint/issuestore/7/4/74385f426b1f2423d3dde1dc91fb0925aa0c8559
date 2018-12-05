@@ -1,11 +1,12 @@
 
+Bpython:S125i"Remove this commented out code.(Ž”¡Žýÿÿÿÿ8³© ’ñ,
 vpython:S116""SRename this field "cythonEpoch" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬…žÇûÿÿÿÿ8˜‹ÿêð,
-upython:S117I"^Rename this local variable "userSeenItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ðÿ þ
-upython:S1170"^Rename this local variable "userSeenItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ðÿ þ
-ppython:S117b"YRename this local variable "numEpoch" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÐºúÕ
-ƒpython:S117A"gRename this local variable "numPositiveIteractions" to match the regular expression ^[_a-z][a-z0-9_]*$.(î³æŸüÿÿÿÿ
-|python:S1173"`Rename this local variable "negItemSelected" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÎðÏýÿÿÿÿ
 kpython:S100'"TRename method "sampleTriplet" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ä±Üå
 lpython:S100>"URename method "epochIteration" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¿Ì¦Ž
 qpython:S100_"URename method "get_S_SLIM_BPR" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(öòÑ‚ÿÿÿÿÿ
+ƒpython:S117A"gRename this local variable "numPositiveIteractions" to match the regular expression ^[_a-z][a-z0-9_]*$.(î³æŸüÿÿÿÿ
+upython:S1170"^Rename this local variable "userSeenItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ðÿ þ
+upython:S117I"^Rename this local variable "userSeenItems" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ðÿ þ
 fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(ç‘«”
+upython:S117b"YRename this local variable "numEpoch" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ïê×©úÿÿÿÿ
+|python:S1173"`Rename this local variable "negItemSelected" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÈÎðÏýÿÿÿÿ

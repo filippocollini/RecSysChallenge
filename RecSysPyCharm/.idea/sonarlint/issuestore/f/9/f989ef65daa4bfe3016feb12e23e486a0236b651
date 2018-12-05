@@ -1,0 +1,6 @@
+
+^python:S107"GMethod "fit" has 12 parameters, which is greater than the 7 authorized.(ВїЛЉ
+fpython:S117"ORename this parameter "URM" to match the regular expression ^[_a-z][a-z0-9_]*$.(ВїЛЉ
+tpython:S1171"XRename this local variable "URM_row" to match the regular expression ^[_a-z][a-z0-9_]*$.(ычн÷ь€€€€
+wpython:S1174"`Rename this local variable "URM_row_flatten" to match the regular expression ^[_a-z][a-z0-9_]*$.(Піаµ
+cpython:S116"LRename this field "Slim" to match the regular expression ^[_a-z][_a-z0-9]*$.(игпњ

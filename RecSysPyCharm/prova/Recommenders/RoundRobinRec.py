@@ -196,7 +196,7 @@ class RoundRobinRec(object):
                     c_last_index += 1
 
         if mode == "jump":
-            while i < 5:
+            while i < 10:
                 for a_i in range(0, a):
                     if icm_argsort[a_last_index] not in top_5_indices:
                         top_5_indices.append(icm_argsort[a_last_index])
@@ -216,7 +216,7 @@ class RoundRobinRec(object):
                     c_last_index += 1
 
         if mode == "one":
-            while i < 5:
+            while i < 10:
                 if icm_argsort[a_last_index] not in top_5_indices:
                     top_5_indices.append(icm_argsort[a_last_index])
                     i += 1
@@ -250,7 +250,7 @@ class RoundRobinRec(object):
             avg_list.append(avg)
 
         avg_list_argsort = np.argsort(avg_list)
-        for a in avg_list_argsort[:5]:
+        for a in avg_list_argsort[:10]:
             top_5_indices.append(icm_argsort[a])
 
         return top_5_indices
