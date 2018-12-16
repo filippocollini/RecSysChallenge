@@ -5,12 +5,15 @@ import os as os
 from scipy import sparse
 from scipy.sparse.linalg import svds
 from pandas import DataFrame
+from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MultiLabelBinarizer, normalize
 from tqdm import tqdm
 import ast
 from sklearn import feature_extraction
 from sklearn import decomposition
 from Utils import Utils
+import scipy
+import scipy.sparse as sps
 
 """
 This class contains fundamental functions to extract dataframes from the csv
@@ -192,7 +195,7 @@ class Builder(object):
         return ICM_tfidf.tocsr()
 
 
-    def build_S_ICM_knn(self, ICM, knn):
+    def build_S_ICM_knn(self, ICM, knn, shrink=10):
         print("Building S from ICM with knn =", knn, "...")
         ICM_T = ICM.T
         ICM_T = ICM_T.tocsr()
@@ -204,6 +207,11 @@ class Builder(object):
             r = s.data.argsort()[:-knn]
             s.data[r] = 0
             sparse.csr_matrix.eliminate_zeros(s)
+
+            #shrinkage makes it worst
+            #n = sparse.csr_matrix.count_nonzero(ICM[i, :])
+            #s = s / (np.sqrt(n * n) + shrink)
+
             s_list.append(s)
 
         S = sparse.vstack(s_list)
@@ -226,6 +234,11 @@ class Builder(object):
             S_row.data[r] = 0
 
             sparse.csr_matrix.eliminate_zeros(S_row)
+
+            n = sparse.csr_matrix.count_nonzero(UCM_T[i])
+            m = sparse.csr_matrix.count_nonzero(UCM_T[i])
+
+            S_row = S_row / (np.sqrt(n * m) + shrink)
 
             S_matrix_list.append(S_row)
 

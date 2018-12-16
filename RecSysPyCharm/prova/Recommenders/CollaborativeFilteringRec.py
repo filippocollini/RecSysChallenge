@@ -29,6 +29,10 @@ class CollaborativeFilteringRec(object):
         self.S_UCM = None
         self.is_test = False
 
+    def get_URM_train(self):
+        b = Builder()
+        return b.get_URM()
+
     def fit(self, URM, target_playlists, target_tracks, num_playlist_to_recommend,
             S_UCM, is_test):
 

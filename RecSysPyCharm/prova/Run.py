@@ -6,13 +6,16 @@ Just uncomment one of the following line and run.
 
 Hyperparameters for each recommender can be changed in the
 Recsys.py file.
-"""
 
+"""
 n = 1
 avg_map = 0
 for i in range(n):
-    avg_map += rs.hybrid_rec(is_test=False)
+    avg_map += rs.hybrid_repo(False)
 #print('Average MAP@10:', avg_map/n)
+
+
+#rs.hybrid_repo()
 
 """
     only collab     con knn=500 0.09554863107234404
@@ -41,4 +44,6 @@ for i in range(n):
 # rs.item_user_avg(is_test=True)
 # rs.collaborative_filtering(is_test=True)
 # rs.mf_als_rec(is_test=True)
+
+
 

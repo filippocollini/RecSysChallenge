@@ -1,5 +1,8 @@
+from sklearn.preprocessing import MultiLabelBinarizer
+
 from Builder import Builder
 from Evaluator import Evaluator
+from KNN.ItemKNNCBFRecommender import ItemKNNCBFRecommender
 from Recommenders import ItemBasedRec, CollaborativeFilteringRec, ItemUserAvgRec,\
     SlimBPRRec, SVDRec, RoundRobinRec, HybridRec, TopPopRec, MFRec
 import SlimBPR, MFBPR
@@ -9,6 +12,7 @@ from pyspark import SparkContext, SparkConf
 from tqdm import tqdm
 import pandas as pd
 import time
+from Base.Recommender_utils import check_matrix, similarityMatrixTopK
 
 
 os.environ["PYSPARK_PYTHON"] = "/opt/anaconda/bin/python3.6"
@@ -24,6 +28,30 @@ If is_test is true, the dataset will be split into training set (80%) and test s
 and the MAP@5 will be computed on the test set.
 Otherwise, if is false, a .csv file with the prediction will be produced.
 """
+
+import numpy as np
+import scipy.sparse as sps
+
+def train_test_holdout(URM_all, train_perc = 0.8):
+
+
+    numInteractions = URM_all.nnz
+    URM_all = URM_all.tocoo()
+    shape = URM_all.shape
+
+
+    train_mask = np.random.choice([True,False], numInteractions, [train_perc, 1-train_perc])
+
+
+    URM_train = sps.coo_matrix((URM_all.data[train_mask], (URM_all.row[train_mask], URM_all.col[train_mask])), shape=shape)
+    URM_train = URM_train.tocsr()
+
+    test_mask = np.logical_not(train_mask)
+
+    URM_test = sps.coo_matrix((URM_all.data[test_mask], (URM_all.row[test_mask], URM_all.col[test_mask])), shape=shape)
+    URM_test = URM_test.tocsr()
+
+    return URM_train, URM_test
 
 
 def top_pop_rec():
@@ -169,6 +197,230 @@ def round_robin_rec(is_test, avg_mode):
         print('Prediction saved!')
         train_df.to_csv(os.path.dirname(os.path.realpath(__file__))[:-19] + "/all/sub.csv", sep=',', index=False)
 
+def hybrid_repo(is_test):
+    b = Builder()
+    ev = Evaluator()
+    ev.split()
+    ICM = b.build_ICM()
+
+    URM_train, URM_test = train_test_holdout(b.get_URM(), train_perc=0.8)
+    URM_train, URM_validation = train_test_holdout(URM_train, train_perc=0.9)
+
+    from ParameterTuning.AbstractClassSearch import EvaluatorWrapper
+    from Base.Evaluation.Evaluator import SequentialEvaluator
+
+    evaluator_validation = SequentialEvaluator(URM_validation, cutoff_list=[5])
+    evaluator_test = SequentialEvaluator(URM_test, cutoff_list=[5, 10])
+
+    evaluator_validation = EvaluatorWrapper(evaluator_validation)
+    evaluator_test = EvaluatorWrapper(evaluator_test)
+
+    from KNN.ItemKNNCFRecommender import ItemKNNCFRecommender
+    from ParameterTuning.BayesianSearch import BayesianSearch
+
+    recommender_class = ItemKNNCFRecommender
+
+    parameterSearch = BayesianSearch(recommender_class,
+                                     evaluator_validation=evaluator_validation,
+                                     evaluator_test=evaluator_test)
+
+    from ParameterTuning.AbstractClassSearch import DictionaryKeys
+
+    hyperparamethers_range_dictionary = {}
+    hyperparamethers_range_dictionary["topK"] = [5, 10, 20, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800]
+    hyperparamethers_range_dictionary["shrink"] = [0, 10, 50, 100, 200, 300, 500, 1000]
+    hyperparamethers_range_dictionary["similarity"] = ["cosine"]
+    hyperparamethers_range_dictionary["normalize"] = [True, False]
+
+    recommenderDictionary = {DictionaryKeys.CONSTRUCTOR_POSITIONAL_ARGS: [URM_train],
+                             DictionaryKeys.CONSTRUCTOR_KEYWORD_ARGS: {},
+                             DictionaryKeys.FIT_POSITIONAL_ARGS: dict(),
+                             DictionaryKeys.FIT_KEYWORD_ARGS: dict(),
+                             DictionaryKeys.FIT_RANGE_KEYWORD_ARGS: hyperparamethers_range_dictionary}
+
+    output_root_path = "result_experiments/"
+
+    import os
+
+    # If directory does not exist, create
+    if not os.path.exists(output_root_path):
+        os.makedirs(output_root_path)
+
+    output_root_path += recommender_class.RECOMMENDER_NAME
+
+    n_cases = 2
+    metric_to_optimize = "MAP"
+
+    best_parameters = parameterSearch.search(recommenderDictionary,
+                                             n_cases=n_cases,
+                                             output_root_path=output_root_path,
+                                             metric=metric_to_optimize)
+
+    itemKNNCF = ItemKNNCFRecommender(URM_train)
+    itemKNNCF.fit(**best_parameters)
+
+    from FW_Similarity.CFW_D_Similarity_Linalg import CFW_D_Similarity_Linalg
+
+    n_cases = 2
+    metric_to_optimize = "MAP"
+
+    best_parameters_ItemKNNCBF = parameterSearch.search(recommenderDictionary,
+                                                        n_cases=n_cases,
+                                                        output_root_path=output_root_path,
+                                                        metric=metric_to_optimize)
+
+    itemKNNCBF = ItemKNNCBFRecommender(ICM, URM_train)
+    itemKNNCBF.fit(**best_parameters_ItemKNNCBF)
+
+    """
+    #_____________________________________________________________________
+    from ParameterTuning.BayesianSearch import BayesianSearch
+    from ParameterTuning.AbstractClassSearch import DictionaryKeys
+
+    from ParameterTuning.AbstractClassSearch import EvaluatorWrapper
+
+    evaluator_validation_tuning = EvaluatorWrapper(evaluator_validation)
+    evaluator_test_tuning = EvaluatorWrapper(evaluator_test)
+
+    recommender_class = CFW_D_Similarity_Linalg
+
+    parameterSearch = BayesianSearch(recommender_class,
+                                     evaluator_validation=evaluator_validation_tuning,
+                                     evaluator_test=evaluator_test_tuning)
+
+    hyperparamethers_range_dictionary = {}
+    hyperparamethers_range_dictionary["topK"] = [5, 10, 20, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800]
+    hyperparamethers_range_dictionary["add_zeros_quota"] = range(0, 1)
+    hyperparamethers_range_dictionary["normalize_similarity"] = [True, False]
+
+    recommenderDictionary = {DictionaryKeys.CONSTRUCTOR_POSITIONAL_ARGS: [URM_train, ICM, itemKNNCF.W_sparse],
+                             DictionaryKeys.CONSTRUCTOR_KEYWORD_ARGS: {},
+                             DictionaryKeys.FIT_POSITIONAL_ARGS: dict(),
+                             DictionaryKeys.FIT_KEYWORD_ARGS: dict(),
+                             DictionaryKeys.FIT_RANGE_KEYWORD_ARGS: hyperparamethers_range_dictionary}
+
+    output_root_path = "result_experiments/"
+
+    import os
+
+    # If directory does not exist, create
+    if not os.path.exists(output_root_path):
+        os.makedirs(output_root_path)
+
+    output_root_path += recommender_class.RECOMMENDER_NAME
+
+    n_cases = 2
+    metric_to_optimize = "MAP"
+
+    best_parameters_CFW_D = parameterSearch.search(recommenderDictionary,
+                                                   n_cases=n_cases,
+                                                   output_root_path=output_root_path,
+                                                   metric=metric_to_optimize)
+
+    CFW_weithing = CFW_D_Similarity_Linalg(URM_train, ICM, itemKNNCF.W_sparse)
+    CFW_weithing.fit(**best_parameters_CFW_D)
+    #___________________________________________________________________________________________-
+
+    """
+
+    from GraphBased.P3alphaRecommender import P3alphaRecommender
+
+    P3alpha = P3alphaRecommender(URM_train)
+    P3alpha.fit()
+
+    from MatrixFactorization.PureSVD import PureSVDRecommender
+
+    #pureSVD = PureSVDRecommender(URM_train)
+    #pureSVD.fit()
+
+    rec = HybridRec.HybridRec()
+
+    S_UCM = b.get_S_UCM_KNN(b.get_UCM(ev.get_URM_train()), 600)
+    S_ICM = b.build_S_ICM_knn(b.build_ICM(), 250)
+
+    rec.fit(ev.get_URM_train(), ev.get_target_playlists(), ev.get_target_tracks(), ev.num_playlists_to_test,
+            itemKNNCBF.W_sparse, itemKNNCF.W_sparse, P3alpha.W_sparse, is_test=True, alfa=0.7, avg=0.3)
+
+    train_df = rec.recommend()
+
+    if is_test:
+        map5 = ev.map5(train_df)
+        print('Hybrid MAP@10:', map5)
+        return map5
+    else:
+        print('Prediction saved!')
+        train_df.to_csv(os.path.dirname(os.path.realpath(__file__))[:-19] + "/all/sub.csv", sep=',', index=False)
+        return 0
+
+
+    #hybridrecommender = ItemKNNSimilarityHybridRecommender(URM_train, itemKNNCF.W_sparse, P3alpha.W_sparse)
+    #hybridrecommender.fit(alpha=0.5)
+
+    #print(evaluator_validation.evaluateRecommender(hybridrecommender))
+
+    """
+    n_cases = 2
+    metric_to_optimize = "MAP"
+
+    best_parameters_ItemKNNCBF = parameterSearch.search(recommenderDictionary,
+                                                        n_cases=n_cases,
+                                                        output_root_path=output_root_path,
+                                                        metric=metric_to_optimize)
+
+    itemKNNCBF = ItemKNNCBFRecommender(b.build_ICM(), URM_train, True)
+    itemKNNCBF.fit(**best_parameters_ItemKNNCBF)
+    
+    #hybridrecommender = ItemKNNScoresHybridRecommender(URM_train, itemKNNCF, pureSVD)
+    #hybridrecommender.fit(alpha=0.5)
+
+    #print(evaluator_validation.evaluateRecommender(hybridrecommender))
+
+    profile_length = np.ediff1d(URM_train.indptr)
+    block_size = int(len(profile_length) * 0.05)
+    sorted_users = np.argsort(profile_length)
+
+    MAP_itemKNNCF_per_group = []
+    MAP_itemKNNCBF_per_group = []
+    MAP_pureSVD_per_group = []
+    cutoff = 10
+
+    for group_id in range(0, 10):
+        start_pos = group_id * block_size
+        end_pos = min((group_id + 1) * block_size, len(profile_length))
+
+        users_in_group = sorted_users[start_pos:end_pos]
+
+        users_in_group_p_len = profile_length[users_in_group]
+
+        print("Group {}, average p.len {:.2f}, min {}, max {}".format(group_id,
+                                                                      users_in_group_p_len.mean(),
+                                                                      users_in_group_p_len.min(),
+                                                                      users_in_group_p_len.max()))
+
+        users_not_in_group_flag = np.isin(sorted_users, users_in_group, invert=True)
+        users_not_in_group = sorted_users[users_not_in_group_flag]
+
+        evaluator_test = SequentialEvaluator(URM_test, cutoff_list=[cutoff], ignore_users=users_not_in_group)
+
+        results, _ = evaluator_test.evaluateRecommender(itemKNNCF)
+        MAP_itemKNNCF_per_group.append(results[cutoff]["MAP"])
+
+        results, _ = evaluator_test.evaluateRecommender(pureSVD)
+        MAP_pureSVD_per_group.append(results[cutoff]["MAP"])
+
+        results, _ = evaluator_test.evaluateRecommender(itemKNNCBF)
+        MAP_itemKNNCBF_per_group.append(results[cutoff]["MAP"])
+
+        import matplotlib.pyplot as pyplot
+
+        pyplot.plot(MAP_itemKNNCF_per_group, label="itemKNNCF")
+        pyplot.plot(MAP_itemKNNCBF_per_group, label="itemKNNCBF")
+        pyplot.plot(MAP_pureSVD_per_group, label="pureSVD")
+        pyplot.ylabel('MAP')
+        pyplot.xlabel('User Group')
+        pyplot.legend()
+        pyplot.show()
+"""
 
 def hybrid_rec(is_test):
     print('*** Test Hybrid Recommender ***')
@@ -306,3 +558,75 @@ def mf_als_rec(is_test):
         train_df.to_csv(os.path.dirname(os.path.realpath(__file__))[:-19] + "/all/sub.csv", sep=',', index=False)
         return 0
 
+from Base.Recommender import Recommender
+
+class ItemKNNScoresHybridRecommender(Recommender):
+    """ ItemKNNScoresHybridRecommender
+    Hybrid of two prediction scores R = R1*alpha + R2*(1-alpha)
+
+    """
+
+    RECOMMENDER_NAME = "ItemKNNScoresHybridRecommender"
+
+    def __init__(self, URM_train, Recommender_1, Recommender_2):
+        super(ItemKNNScoresHybridRecommender, self).__init__()
+
+        self.URM_train = check_matrix(URM_train.copy(), 'csr')
+        self.Recommender_1 = Recommender_1
+        self.Recommender_2 = Recommender_2
+
+        self.compute_item_score = self.compute_score_hybrid
+
+    def fit(self, alpha=0.5):
+        self.alpha = alpha
+
+    def compute_score_hybrid(self, user_id_array):
+        item_weights_1 = self.Recommender_1.compute_item_score(user_id_array)
+        item_weights_2 = self.Recommender_2.compute_item_score(user_id_array)
+
+        item_weights = item_weights_1 * self.alpha + item_weights_2 * (1 - self.alpha)
+
+        return item_weights
+
+from Base.Recommender import Recommender
+from Base.Recommender_utils import check_matrix, similarityMatrixTopK
+from Base.SimilarityMatrixRecommender import SimilarityMatrixRecommender
+
+
+class ItemKNNSimilarityHybridRecommender(SimilarityMatrixRecommender, Recommender):
+    """ ItemKNNSimilarityHybridRecommender
+    Hybrid of two similarities S = S1*alpha + S2*(1-alpha)
+
+    """
+
+    RECOMMENDER_NAME = "ItemKNNSimilarityHybridRecommender"
+
+
+    def __init__(self, URM_train, Similarity_1, Similarity_2, sparse_weights=True):
+        super(ItemKNNSimilarityHybridRecommender, self).__init__()
+
+        if Similarity_1.shape != Similarity_2.shape:
+            raise ValueError("ItemKNNSimilarityHybridRecommender: similarities have different size, S1 is {}, S2 is {}".format(
+                Similarity_1.shape, Similarity_2.shape
+            ))
+
+        # CSR is faster during evaluation
+        self.Similarity_1 = check_matrix(Similarity_1.copy(), 'csr')
+        self.Similarity_2 = check_matrix(Similarity_2.copy(), 'csr')
+
+        self.URM_train = check_matrix(URM_train.copy(), 'csr')
+
+        self.sparse_weights = sparse_weights
+
+
+    def fit(self, topK=100, alpha = 0.5):
+
+        self.topK = topK
+        self.alpha = alpha
+
+        W = self.Similarity_1*self.alpha + self.Similarity_2*(1-self.alpha)
+
+        if self.sparse_weights:
+            self.W_sparse = similarityMatrixTopK(W, forceSparseOutput=True, k=self.topK)
+        else:
+            self.W = similarityMatrixTopK(W, forceSparseOutput=False, k=self.topK)

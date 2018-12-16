@@ -248,6 +248,10 @@ class BayesianOptimization(object):
         self.gp.set_params(**gp_params)
 
         # Find unique rows of X to avoid GP from breaking
+        self.space.X[~np.isfinite(self.space.X)] = 0
+        self.space.X[np.isnan(self.space.X)] = 0
+        self.space.Y[~np.isfinite(self.space.Y)] = 0
+        self.space.Y[np.isnan(self.space.Y)] = 0
         self.gp.fit(self.space.X, self.space.Y)
 
         # Finding argmax of the acquisition function.

@@ -2,12 +2,137 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a22dd3cf-d7c0-4aa2-b623-ea6ed2bc4756" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/RecSysChallenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RecSysChallenge.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/RecSysPyCharm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/RecSysPyCharm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/dictionaries/alle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/dictionaries/alle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/0/4/04f14a09eadab59034bd9f5efdb8c72753c3281f" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/0/4/04f14a09eadab59034bd9f5efdb8c72753c3281f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/0/9/09feed8f810f83cdd4948a3c4a35aa8b11a2a140" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/0/9/09feed8f810f83cdd4948a3c4a35aa8b11a2a140" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/1/b/1bf2f4d26d47360d7f80c6d683f5bb02e0a0fb4b" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/1/b/1bf2f4d26d47360d7f80c6d683f5bb02e0a0fb4b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/2/c/2c1675c5a4e9639a2fb2f62d4a69a06dd152b0ae" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/2/c/2c1675c5a4e9639a2fb2f62d4a69a06dd152b0ae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/3/b/3b194413d32a1e7e20bfa2b4450f98772e1f0bff" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/3/b/3b194413d32a1e7e20bfa2b4450f98772e1f0bff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/4/2/42a578b0fe293fad37cc0c40d982788c867ec2b6" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/4/2/42a578b0fe293fad37cc0c40d982788c867ec2b6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/5/a/5ad96406bc667463ac1abb022c479562429bf5cc" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/5/a/5ad96406bc667463ac1abb022c479562429bf5cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/5/f/5f2f01f6cfe51aabf656234a14dc5676cb556015" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/5/f/5f2f01f6cfe51aabf656234a14dc5676cb556015" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/2/622c417981069d654c8528a3553a9a5beb1f9eb8" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/2/622c417981069d654c8528a3553a9a5beb1f9eb8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/7/67887742219e7ed4ba5421975c777ca163a7fff5" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/7/67887742219e7ed4ba5421975c777ca163a7fff5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/b/6b767ecabbe57d7806a21219a54ac7d33f999d6e" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/6/b/6b767ecabbe57d7806a21219a54ac7d33f999d6e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/7/4/74385f426b1f2423d3dde1dc91fb0925aa0c8559" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/7/4/74385f426b1f2423d3dde1dc91fb0925aa0c8559" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/7/8/787e38a6bb00349b164d1f82491d9b7215d65409" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/7/8/787e38a6bb00349b164d1f82491d9b7215d65409" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/8/4/84a2d8e454664abea029446e9b6ef74f37cbe20b" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/8/4/84a2d8e454664abea029446e9b6ef74f37cbe20b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/9/2/922dfe4749d10bef009b8539949279d122a74ce2" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/9/2/922dfe4749d10bef009b8539949279d122a74ce2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/2/b27826570157bde5e9d584c4b35f2f8d563fac1d" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/2/b27826570157bde5e9d584c4b35f2f8d563fac1d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/d/bd647876a27d7b90a7054c9d0e38b633e157d473" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/d/bd647876a27d7b90a7054c9d0e38b633e157d473" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/f/bff846bf929a6042f782fe26f9a555fd9d6f70ed" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/b/f/bff846bf929a6042f782fe26f9a555fd9d6f70ed" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/c/4/c431b2d417d0f2ce59bbab67fb2682e422610d8b" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/c/4/c431b2d417d0f2ce59bbab67fb2682e422610d8b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/d/6/d6ee28c4efb4b343ef9f93a6c1fb3b59794b9750" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/d/6/d6ee28c4efb4b343ef9f93a6c1fb3b59794b9750" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/d/b/dbda62a1c219cfcbd80285cb377daa97fa53af92" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/d/b/dbda62a1c219cfcbd80285cb377daa97fa53af92" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/9/f989ef65daa4bfe3016feb12e23e486a0236b651" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/9/f989ef65daa4bfe3016feb12e23e486a0236b651" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/9/f9cf5a85a2d9bb57ca5d99aa7c1ea768863c5001" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/9/f9cf5a85a2d9bb57ca5d99aa7c1ea768863c5001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/d/fd0c6ba123d5d5fff12fba07d63223a446fcd0a8" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/f/d/fd0c6ba123d5d5fff12fba07d63223a446fcd0a8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.c" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.c" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/CythonModules/KnnRecCython.o" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/CythonModules/KnnRecCython.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/BasicItemKNNRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/BasicItemKNNRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/SlimBprRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/SlimBprRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/TopPopRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/Recommenders/TopPopRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/Evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/Evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/KFoldResultRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/KFoldResultRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/KFoldResultRepository_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/KFoldResultRepository_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/ResultMetric.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/ResultMetric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/k_fold_significance_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/k_fold_significance_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/metrics_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/metrics_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/ttest.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/ttest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/IR_feature_weighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/IR_feature_weighting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Incremental_Training_Early_Stopping.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Incremental_Training_Early_Stopping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/NonPersonalizedRecommender.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/NonPersonalizedRecommender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/PredefinedListRecommender.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/PredefinedListRecommender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender_utils_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender_utils_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity_Euclidean.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity_Euclidean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity_Python.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity_Python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.c" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/Compute_Similarity_Cython.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/compileCython.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/compileCython.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/cosine_similarity_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/cosine_similarity_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.c" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.c" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.o" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.o" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/build/temp.linux-x86_64-3.6/home/alle/GitHub/RecSysChallenge/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/AbstractClassSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/AbstractClassSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.coveragerc" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.coveragerc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/bayesian_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/bayesian_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/target_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/bayesian_optimization.gif" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/bayesian_optimization.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/bo_example.png" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/bo_example.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/exploitation vs exploration.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/exploitation vs exploration.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/sklearn_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/sklearn_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/usage.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/usage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/visualization.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/xgboost_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/examples/xgboost_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_bayesian_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_bayesian_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_helper_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_target_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/tests/test_target_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/GridSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/GridSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/RandomSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/RandomSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/CollaborativeFilteringRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/CollaborativeFilteringRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/HybridRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/HybridRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/MFRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/MFRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Run.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/PoolWithSubprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/PoolWithSubprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/estimate_sparse_size.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/estimate_sparse_size.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/test_DataReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/Utils/test_DataReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecSysPyCharm/prova/run_parameter_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecSysPyCharm/prova/run_parameter_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Result_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Result_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/sub.csv" beforeDir="false" afterPath="$PROJECT_DIR$/all/sub.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/train_sequential.csv" beforeDir="false" afterPath="$PROJECT_DIR$/all/train_sequential.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestscores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bestscores.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 3 - Content Based Filtering-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 3 - Content Based Filtering-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 4 - Cython-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 4 - Cython-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 5 - SLIM BPR-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 5 - SLIM BPR-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 6 - MF with PyTorch-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 6 - MF with PyTorch-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 6 - MF-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/.ipynb_checkpoints/Practice 6 - MF-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 2 - How to build a recommender.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 2 - How to build a recommender.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 3 - Content Based Filtering.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 3 - Content Based Filtering.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 4 - Cython.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 4 - Cython.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 5 - SLIM BPR.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 5 - SLIM BPR.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 5 - SLIM BPR_old.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 5 - SLIM BPR_old.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 6 - MF with PyTorch.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 6 - MF with PyTorch.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 6 - MF.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 6 - MF.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pratice/Practice 6 - MF_old.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pratice/Practice 6 - MF_old.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,48 +143,86 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/RecSysChallenge$Builder.coverage" NAME="Builder Coverage Results" MODIFIED="1541930825508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/prova" />
-    <SUITE FILE_PATH="coverage/RecSysChallenge$setup.coverage" NAME="setup Coverage Results" MODIFIED="1541797608553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/CythonModules" />
     <SUITE FILE_PATH="coverage/RecSysChallenge$MfBprRec.coverage" NAME="MfBprRec Coverage Results" MODIFIED="1541846674907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/Recommenders" />
+    <SUITE FILE_PATH="coverage/RecSysChallenge$setup.coverage" NAME="setup Coverage Results" MODIFIED="1544347702225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules" />
     <SUITE FILE_PATH="coverage/RecSysChallenge$RecSysChallenge_AimiCollini.coverage" NAME="RecSysChallenge_AimiCollini Coverage Results" MODIFIED="1541846867543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm" />
     <SUITE FILE_PATH="coverage/RecSysChallenge$KnnRecCython_pyx.coverage" NAME="KnnRecCython.pyx Coverage Results" MODIFIED="1541795023228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/CythonModules" />
-    <SUITE FILE_PATH="coverage/RecSysChallenge$Run.coverage" NAME="Run Coverage Results" MODIFIED="1541930923793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/prova" />
+    <SUITE FILE_PATH="coverage/RecSysChallenge$Run.coverage" NAME="Run Coverage Results" MODIFIED="1544920515968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/prova" />
+    <SUITE FILE_PATH="coverage/RecSysChallenge$compileCython.coverage" NAME="compileCython Coverage Results" MODIFIED="1543419215604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RecSysPyCharm/Base/Similarity/Cython" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RecSysChallenge_AimiCollini.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
+    <leaf>
+      <file leaf-file-name="Run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+            <state relative-caret-position="60">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sub.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/all/sub.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="55" lean-forward="true" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recsys.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="352" column="16" selection-start-line="352" selection-start-column="16" selection-end-line="352" selection-end-column="16" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bestscores.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bestscores.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="MfBprRec.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py">
+      <file leaf-file-name="Compute_Similarity.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1919">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1185">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MF_BPR_Cython_Epoch.pyx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.pyx">
+      <file leaf-file-name="ItemKNNCBFRecommender.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/KNN/ItemKNNCBFRecommender.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="237">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CFW_D_Similarity_Linalg.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/FW_Similarity/CFW_D_Similarity_Linalg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="203" selection-start-line="203" selection-end-line="203" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HybridRec.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/HybridRec.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="96" column="86" selection-start-line="96" selection-start-column="86" selection-end-line="96" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recommender.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-767">
+              <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -67,8 +230,8 @@
       <file leaf-file-name="Builder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+            <state relative-caret-position="119">
+              <caret line="34" column="66" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="66" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -76,36 +239,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Evaluator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Evaluator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1403">
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frame.py" pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/pandas/core/frame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="2687" selection-start-line="2687" selection-end-line="2687" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecSysChallenge_AimiCollini.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>0.1</find>
+      <find>map</find>
+      <find>Recommender</find>
+      <find>simila</find>
+      <find>,</find>
+      <find>,</find>
+      <find>]&quot;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,7 +266,28 @@
         <option value="$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py" />
         <option value="$PROJECT_DIR$/RecSysPyCharm/Recommenders/BasicItemKNNRec.py" />
         <option value="$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.pyx" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/SLIM_BPR/SLIM_BPR_Theano.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/Base/Similarity/Cython/compileCython.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/KNN/ItemKNNCFRecommender.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/SlimBPRRec.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/SlimBPR.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/Recommender.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/FM.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/RoundRobinRec.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/MFBPR.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/spotlight/factorization/implicit.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/CollaborativeFilteringRec.py" />
         <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianSearch.py" />
+        <option value="/anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/utils/validation.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/bayesian_optimization.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/Evaluator.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/HybridRec.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Evaluator.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/FW_Similarity/CFW_D_Similarity_Linalg.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py" />
+        <option value="$PROJECT_DIR$/RecSysPyCharm/prova/Run.py" />
+        <option value="$PROJECT_DIR$/all/sub.csv" />
       </list>
     </option>
   </component>
@@ -131,8 +300,8 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="634" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectView">
@@ -153,6 +322,42 @@
               <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
               <item name="prova" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="Base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="CythonModules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="FW_Similarity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="Notebooks_utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="Recommenders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecSysChallenge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecSysPyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="prova" type="462c0819:PsiDirectoryNode" />
+              <item name="result_experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -165,6 +370,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RecSysPyCharm" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -193,25 +403,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="MfBprRec" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RecSysChallenge" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RecSysPyCharm/Recommenders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -255,6 +446,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="compileCython" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RecSysChallenge" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RecSysPyCharm/Base/Similarity/Cython" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecSysPyCharm/Base/Similarity/Cython/compileCython.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RecSysChallenge" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,12 +473,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RecSysPyCharm/CythonModules" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -276,18 +486,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.RecSysChallenge_AimiCollini" />
-      <item itemvalue="Python.MfBprRec" />
-      <item itemvalue="Python.setup" />
       <item itemvalue="Python.Builder" />
       <item itemvalue="Python.Run" />
+      <item itemvalue="Python.compileCython" />
+      <item itemvalue="Python.setup" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Run" />
+        <item itemvalue="Python.setup" />
+        <item itemvalue="Python.compileCython" />
         <item itemvalue="Python.Builder" />
         <item itemvalue="Python.RecSysChallenge_AimiCollini" />
-        <item itemvalue="Python.MfBprRec" />
-        <item itemvalue="Python.setup" />
       </list>
     </recent_temporary>
   </component>
@@ -305,21 +515,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50080776" side_tool="true" weight="0.32936507" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5024233" side_tool="true" weight="0.32936507" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.32936507" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49757674" visible="true" weight="0.32936507" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919224" weight="0.32936507" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2819063" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936507" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32956383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994709" />
@@ -327,10 +536,37 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32936507" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936507" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32936507" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49919224" visible="true" weight="0.32936507" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32936507" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32936507" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936507" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50080776" side_tool="true" weight="0.32936507" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3994709" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32936507" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -347,232 +583,45 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
+      <option name="time" value="1" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 6 - MF.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 3 - Content Based Filtering.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bestscores.txt">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/ParameterTuning/AbstractClassSearch.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Base/Evaluation/Evaluator.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Base/Recommender.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/KNN/UserKNNCFRecommender.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/Recommender.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/SlimBPRRec.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/FM.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/MFBPR.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/spotlight/factorization/implicit.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/ItemBasedRec.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/RoundRobinRec.py" />
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 4 - Cython.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/SlimBprRec.py">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/MfBPRCythonEpoch.pyx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 3 - Content Based Filtering.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bestscores.txt">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/setup.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 4 - Cython.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/TopPopRec.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 6 - MF.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/TopPopRec.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 3 - Content Based Filtering.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 4 - Cython.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pratice/Practice 6 - MF.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/Cython/Build/Dependencies.py">
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/scipy/sparse/coo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
-          <caret line="1208" selection-start-line="1208" selection-end-line="1208" />
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/SlimBprRec.py">
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/scipy/sparse/compressed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="152">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/KnnRecCython.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/BasicItemKNNRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysChallenge_AimiCollini.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bestscores.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/Recommenders/MfBprRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1919">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/FM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/MFBPR.py">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/MFRec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -581,17 +630,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/CollaborativeFilteringRec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Run.py">
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/preprocessing/label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="851" selection-start-line="851" selection-end-line="851" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/AbstractClassSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/scipy/linalg/decomp_cholesky.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="461" selection-start-line="461" selection-end-line="461" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/gaussian_process/gpr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="195" column="65" lean-forward="true" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="546" selection-start-line="546" selection-end-line="546" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/KNN/UserKNNCFRecommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/MatrixFactorization/MatrixFactorization_BPR_Theano.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/KNN/ItemKNNSimilarityHybridRecommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/KNN/ItemKNNCustomSimilarityRecommender.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Notebooks_utils/compileCython.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Notebooks_utils/data_splitter.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Notebooks_utils/evaluation_function.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Notebooks_utils/Compute_Similarity_Python.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Cython/compileCython.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity_Python.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/SlimBPR.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -602,69 +732,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Utils.py">
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Evaluation/Evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/CythonModules/MF_BPR_Cython_Epoch.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/sklearn/externals/joblib/externals/cloudpickle/cloudpickle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/RecSysChallenge_AimiCollini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="2687" selection-start-line="2687" selection-end-line="2687" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/opt_gemm.py/lib/python3.6/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1862" selection-start-line="1862" selection-end-line="1862" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="190" column="36" selection-start-line="190" selection-start-column="36" selection-end-line="190" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1403">
+        <state relative-caret-position="352">
+          <caret line="151" column="46" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/result_experiments/ItemKNNCFRecommender_best_parameters">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="34" column="66" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="66" />
           <folding>
-            <element signature="e#0#60#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-767">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/ParameterTuning/BayesianOptimization_master/bayes_opt/bayesian_optimization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/KNN/ItemKNNCBFRecommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/FW_Similarity/CFW_D_Similarity_Linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/CythonModules/SlimBPRCythonEpoch.pyx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Base/Similarity/Compute_Similarity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/sub.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recommenders/HybridRec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="96" column="86" selection-start-line="96" selection-start-column="86" selection-end-line="96" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecSysPyCharm/prova/Recsys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="352" column="16" selection-start-line="352" selection-start-column="16" selection-end-line="352" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all/sub.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="55" lean-forward="true" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
         </state>
       </provider>
     </entry>

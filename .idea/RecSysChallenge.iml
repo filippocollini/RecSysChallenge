@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$/RecSysPyCharm">
       <sourceFolder url="file://$MODULE_DIR$/RecSysPyCharm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RecSysPyCharm/prova" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RecSysPyCharm/prova/CythonModules" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

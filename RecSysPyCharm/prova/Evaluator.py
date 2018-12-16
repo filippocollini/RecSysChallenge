@@ -25,6 +25,11 @@ class Evaluator(object):
         return self.URM_train
 
     def get_test_df(self):
+        #occhio qua che va modificato, togliere le due righe sotto questa
+        grouped = self.test_df.groupby('playlist_id', as_index=True).apply(
+            lambda x: list(x['track_id']))
+        URM_test_matrix = MultiLabelBinarizer(classes=self.b.get_tracks(), sparse_output=True).fit_transform(grouped)
+        self.test_df = URM_test_matrix.tocsr()
         return self.test_df
 
     def get_target_playlists(self):
@@ -61,14 +66,16 @@ class Evaluator(object):
 
             # Set num_playlist_to_test
 
-            self.num_playlists_to_test = self.num_playlists_to_evaluate
+            #self.num_playlists_to_test = self.num_playlists_to_evaluate
+            self.num_playlists_to_test = self.b.get_target_playlists().shape[0]
 
             # Find indices of playlists to test and set target_playlists
 
             testable_idx = grouped[[len(x) >= 1 for x in grouped]].index
             test_idx = np.random.choice(testable_idx, self.num_playlists_to_evaluate, replace=False)
             test_idx.sort()
-            self.target_playlists = test_idx
+            #self.target_playlists = test_idx
+            self.target_playlists = self.b.get_target_playlists()
 
             # Extract the test set portion of the data set
 
@@ -85,7 +92,8 @@ class Evaluator(object):
                     t_tracks_to_test = np.asarray(ord_playlists[test_idx[i]][int(-(len(t) * 0.2)):])
                 else:
                     t_tracks_to_test = np.random.choice(t, int(len(t) * 0.2), replace=False)
-                test_df_list.append([test_idx[i], t_tracks_to_test])
+                if test_idx[i] in self.b.get_target_playlists():
+                    test_df_list.append([test_idx[i], t_tracks_to_test])
                 for tt in t_tracks_to_test:
                     t.remove(tt)
                 i += 1
@@ -138,7 +146,7 @@ class Evaluator(object):
         train_matrix = pd.DataFrame.as_matrix(train_df['track_ids'])
         test_matrix = pd.DataFrame.as_matrix(self.test_df['track_ids'])
 
-        for i in range(0, self.num_playlists_to_evaluate):
+        for i in range(0, self.num_playlists_to_test):
             map5 += self.ap(train_matrix[i], test_matrix[i])
 
-        return map5/self.num_playlists_to_evaluate
+        return map5/self.num_playlists_to_test

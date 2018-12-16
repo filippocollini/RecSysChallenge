@@ -1,0 +1,6 @@
+BayesianSearch: Testing config: {'topK': 20, 'shrink': 500, 'similarity': 'cosine', 'normalize': False} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+BayesianSearch: Testing config: {'topK': 300, 'shrink': 500, 'similarity': 'cosine', 'normalize': False} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+BayesianSearch: Testing config: {'topK': 10, 'shrink': 0, 'similarity': 'cosine', 'normalize': False} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+BayesianSearch: Testing config: {'topK': 150, 'shrink': 300, 'similarity': 'cosine', 'normalize': True} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+BayesianSearch: Testing config: {'topK': 700, 'shrink': 50, 'similarity': 'cosine', 'normalize': False} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+BayesianSearch: Testing config: {'topK': 500, 'shrink': 300, 'similarity': 'cosine', 'normalize': True} - Exception The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().

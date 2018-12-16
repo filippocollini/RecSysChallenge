@@ -125,7 +125,7 @@ class Evaluator(object):
 
         for URM_test in URM_test_list:
 
-            URM_test = sps.csr_matrix(URM_test)
+            URM_test = URM_test.tocsr()
             self.URM_test_list.append(URM_test)
 
             rows = URM_test.indptr
@@ -188,7 +188,7 @@ class Evaluator(object):
             output_str += "CUTOFF: {} - ".format(cutoff)
 
             for metric in results_run_current_cutoff.keys():
-                output_str += "{}: {:.7f}, ".format(metric, results_run_current_cutoff[metric])
+                output_str += "{}: {}, ".format(metric, results_run_current_cutoff[metric])
 
             output_str += "\n"
 
@@ -328,6 +328,7 @@ class SequentialEvaluator(Evaluator):
 
 
         results_dict = {}
+
 
         for cutoff in self.cutoff_list:
             results_dict[cutoff] = create_empty_metrics_dict(self.n_items, self.n_users,

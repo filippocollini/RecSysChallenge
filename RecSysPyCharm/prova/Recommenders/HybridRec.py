@@ -23,6 +23,10 @@ otherwise return a dataframe in the submission format.
 
 class HybridRec(object):
 
+    def get_URM_train(self):
+        b = Builder()
+        return b.get_URM()
+
     def fit(self, URM, target_playlists, target_tracks, num_playlist_to_recommend,
             S_ICM, S_UCM, Slim, is_test, alfa, avg):
 
